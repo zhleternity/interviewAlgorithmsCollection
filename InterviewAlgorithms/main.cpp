@@ -19,10 +19,16 @@ int main() {
     height.push_back(5);
     height.push_back(6);
     height.push_back(4);
+    
+    
     AllAlgorithms aa;
     int area = aa.largestRectArea(height);
     cout<<"最大矩形面积为："<<area<<endl;
     int vol = aa.gatherRain(height);
     cout<<"收集的雨水最多为："<<vol<<endl;
+    const char *p = "(()())";
+    int total = aa.getLongestParenthese(p);
+    cout<<"最长匹配长度为："<<total<<endl;
+    
     return 0;
 }
