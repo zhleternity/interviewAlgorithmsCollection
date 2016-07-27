@@ -29,6 +29,18 @@ int main() {
     const char *p = "(()())";
     int total = aa.getLongestParenthese(p);
     cout<<"最长匹配长度为："<<total<<endl;
+    const char *pp[] = {"4","13","5","/","+"};
+    int res = aa.reversePolishNotation(pp, 5);
+    cout<<"计算结果为："<<res<<endl;
     
+    string str = "beautiful";
+    aa.leftRotateMoving(str, 9, 3);
+    cout<<str<<endl;
+    
+    const char *str1 = "ABCBDAB";
+    const char *str2 = "BDCABA";
+    string res2;
+    aa.longestCommonSequence(str1, str2, res2);
+    cout<<"LCS："<<res2<<endl;
     return 0;
 }

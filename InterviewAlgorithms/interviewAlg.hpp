@@ -25,6 +25,12 @@ public:
     int gatherRain(vector<int> &A);
     void topologic(vector<vector<int>> &G ,vector<int> & inDegree,vector<int> &toposort);
     int getLongestParenthese(const char *p);
+    int getLongestParenthese2(const char *p);
+    int reversePolishNotation(const char **p,int size);
+    bool isOperator(const char *token);
+    void reverseString(string &str,int idxFrom,int idxTo);
+    void leftRotateMoving(string &str,int n,int m);
+    void longestCommonSequence(const char *str1,const char *str2,string &res);
 };
 
 #endif /* interviewAlg_hpp */

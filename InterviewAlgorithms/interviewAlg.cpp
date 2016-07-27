@@ -9,6 +9,7 @@
 #include "interviewAlg.hpp"
 #include <queue>
 #include <stack>
+#include <algorithm>
 
 
 //求两个数中的最大值
@@ -145,13 +146,148 @@ int AllAlgorithms::getLongestParenthese(const char *p){
     
 }
 
+//改进版
+int AllAlgorithms::getLongestParenthese2(const char *p){
+    int len = (int)strlen(p);
+    int answer = 0;
+    int start = -1;//最深的（deep = 0）左括号的前一个位置
+    int deep = 0;//表示遇到了多少左扩号
+    for (int i = 0; i < len; i ++) {//从左向右扫描
+        if (p[i] == '(') {
+            deep ++;
+        }
+        else{
+            deep --;
+            if (! deep ) {
+                answer = max(answer, i - start);
+            }
+            else if (deep < 0)//右括号数大于左括号，初始化为for循环前
+            {
+                deep = 0;
+                start = i;
+            }
+        }
+    }
+    deep = 0;//遇到了多少右括号
+    start = len;//最深的右括号的位置
+    for (int i = len - 1; i >= 0; i --) {//从右往左再扫描一次
+        if (p[i] == ')') {
+            deep ++;
+        }
+        else{
+            deep --;
+            if (! deep) {
+                answer = max(answer, start - i);
+            }
+            else if (deep < 0)
+            {
+                deep = 0;
+                start = i;
+            }
+        }
+    }
+    return answer;
+}
+
+//逆波兰表达式
+//Reverse Polish Notation,即后缀表达式。
+// 习惯上,二元运算符总是臵于与之相关的两 个运算对象之间,即中缀表达方法。波兰逻 辑学家J.Lukasiewicz于1929年提出了运算符 都臵于其运算对象之后,故称为后缀表示。
+//如:
+// 中缀表达式:a+(b-c)*d
+// 后缀表达式:abc-d*+
+int AllAlgorithms::reversePolishNotation(const char **p, int size){
+    stack<int> stack;
+    int a,b;
+    const char *token;
+    for (int i = 0; i < size; i ++) {
+        token = p[i];
+        if (! isOperator(token)) {
+            stack.push(atoi(token));
+        }
+        else{
+            b = stack.top();
+            stack.pop();
+            a = stack.top();
+            stack.pop();
+            if(token[0] == '+')
+                stack.push(a + b);
+            else if(token[0] == '-')
+                stack.push(a - b);
+            else if(token[0] == '*')
+                stack.push(a * b);
+            else 
+                stack.push(a / b);
 
 
 
+        }
+    }
+    return stack.top();
+}
 
+//判断是否为运算符
+bool AllAlgorithms::isOperator(const char *token){
+    return ((token[0] == '+') || (token[0] == '-') || (token[0] == '*') || (token[0] == '/'));
+}
 
+//字符串循环移位
 
+//翻转某一段字符串
+void AllAlgorithms::reverseString(string &str, int idxFrom, int idxTo){
+    while (idxFrom < idxTo) {
+        char tmp = str[idxFrom];
+        str[idxFrom ++] = str[idxTo];
+        str[idxTo --] = tmp;
+    }
+}
 
+void AllAlgorithms::leftRotateMoving(string &str, int n, int k){
+    k = k % n;
+    reverseString(str, 0, k-1);
+    reverseString(str, k, n-1);
+    reverseString(str, 0, n-1);
+}
+//最长公共子序列
+void AllAlgorithms::longestCommonSequence(const char *str1, const char *str2, string &res){
+    int length1 = (int)strlen(str1);
+    int length2 = (int)strlen(str2);
+    const char *s1 = str1 - 1;//从1开始
+    const char *s2 = str2 - 1;
+    vector<vector<int>> arrPair(length1 + 1,vector<int>(length2 + 1));
+    for (int i = 0; i < length1; i ++) {
+        arrPair[i][0] = 0;
+    }
+    for (int i = 0; i < length2; i ++) {
+        arrPair[0][i] = 0;
+    }
+    
+    for (int i = 0; i < length1; i ++) {
+        for (int j = 0; j < length2; j ++) {
+            if (s1[i] == s2[j]) {
+                arrPair[i][j] = arrPair[i-1][j-1] + 1;
+            }
+            else
+                arrPair[i][j] = max(arrPair[i][j-1], arrPair[i-1][j]);
+        }
+    }
+    int m,n;
+    m = length1;
+    n = length2;
+    while ((m != 0) && (n != 0)) {
+        if(s1[m] == s2[n]){
+            res.push_back(s1[m]);//赋给输出数组
+            m --;
+            n --;
+        }
+        else{
+            if (arrPair[m][n-1] > arrPair[m-1][n])
+                n --;
+            else
+                m --;
+        }
+    }
+    reverse(res.begin(), res.end());
+}
 
 
 
