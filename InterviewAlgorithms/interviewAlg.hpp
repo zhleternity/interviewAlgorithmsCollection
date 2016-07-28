@@ -35,6 +35,10 @@ public:
     int longestIncreasingSequence(const int *p,int length,int *pre,int& nInx);
     void getLIS(const int *arr,const int *pre,int nIdx,vector<int> &list);
     void _print(int *p,int size);
+    void recursionPermutation(int *a,int size,int n);
+    bool isDuplicate(const int *a,int n,int t);
+    void strFullPermutation(int &a,int size,int n);
 };
+
 
 #endif /* interviewAlg_hpp */
