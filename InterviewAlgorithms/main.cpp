@@ -54,5 +54,8 @@ int main() {
     delete [] pre;
     aa._print(&list.front(), (int)list.size());
     
+    int a[] = {1,2,3,4};
+    aa.recursionPermutation(a, sizeof(a)/sizeof(int), 0);
+    
     return 0;
 }

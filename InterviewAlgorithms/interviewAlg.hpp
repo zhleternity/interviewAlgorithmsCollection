@@ -37,7 +37,7 @@ public:
     void _print(int *p,int size);
     void recursionPermutation(int *a,int size,int n);
     bool isDuplicate(const int *a,int n,int t);
-    void strFullPermutation(int &a,int size,int n);
+    void strFullPermutation(int *a,int size,int n);
 };
 
 

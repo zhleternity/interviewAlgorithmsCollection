@@ -341,7 +341,7 @@ void AllAlgorithms::_print(int *p, int size){
 
 //字符串的全排列
 //给定字符串S[0...N-1],设计算法,枚举S的 全排列。
-//法一：递归算法
+//递归算法
 
 void AllAlgorithms::recursionPermutation(int *a, int size, int n){
     if (n == size -1 ) {
@@ -355,9 +355,32 @@ void AllAlgorithms::recursionPermutation(int *a, int size, int n){
     }
 }
 
+//如果存在重复字符
+//判断是否存在重复字符
+bool AllAlgorithms::isDuplicate(const int *a, int n, int t){
+    while (n < t) {
+        if (a[n] == a[t]) {
+            return false;
+        }
+        n ++;
+    }
+    return true;
+}
 
-
-
+void AllAlgorithms::strFullPermutation(int *a, int size, int n){
+    if (n == size -1) {
+        _print(a, size);
+        return;
+    }
+    for (int i = n; i < size; i ++) {
+        if (! isDuplicate(a, n, i)) {
+            continue;
+        }
+        swap(a[i], a[n]);
+        strFullPermutation(a, size, n + 1 );
+        swap(a[i], a[n]);
+    }
+}
 
 
 
