@@ -254,15 +254,15 @@ void AllAlgorithms::longestCommonSequence(const char *str1, const char *str2, st
     const char *s1 = str1 - 1;//从1开始
     const char *s2 = str2 - 1;
     vector<vector<int>> arrPair(length1 + 1,vector<int>(length2 + 1));
-    for (int i = 0; i < length1; i ++) {
+    for (int i = 0; i <= length1; i ++) {
         arrPair[i][0] = 0;
     }
-    for (int i = 0; i < length2; i ++) {
+    for (int i = 0; i <= length2; i ++) {
         arrPair[0][i] = 0;
     }
     
-    for (int i = 0; i < length1; i ++) {
-        for (int j = 0; j < length2; j ++) {
+    for (int i = 1; i <= length1; i ++) {
+        for (int j = 1; j <= length2; j ++) {
             if (s1[i] == s2[j]) {
                 arrPair[i][j] = arrPair[i-1][j-1] + 1;
             }
@@ -289,11 +289,55 @@ void AllAlgorithms::longestCommonSequence(const char *str1, const char *str2, st
     reverse(res.begin(), res.end());
 }
 
+//LCS的应用：最长递增子序列LIS
+//Longest Increasing Subsequence,LCS:
+// 找出给定数组最长且单调递增的子序列。
+// 如:给定数组{5,6,7,1,2,8},则其最长的单调
+//递增子序列为{5,6,7,8},长度为4。
+// 分析:其实此LIS问题可以转换成最长公子序列
+//问题,为什么呢?
 
-
-
-
-
+int AllAlgorithms::longestIncreasingSequence(const int *p, int length, int *pre, int &nIdx){
+    int * longest = new int[length];
+    for (int i = 0; i < length; i ++) {
+        longest[i] = 1;//最长序列的长度
+        pre[i] = -1;//前缀串的索引
+    }
+    int list = 1;//LIS的最长长度，至少会有自己本身，所以至少有1
+    nIdx = 0;
+    for (int i = 1; i < length; i ++) {
+        for (int j = 0; j < i; j++) {
+            if (p[j] <= p[i]) {
+                if (longest[i] < longest[j] + 1) {
+                    longest[i] = longest[j] + 1;
+                    pre[i] = j;
+                }
+            }
+        }
+        if (list < longest[i]) {
+            list = longest[i];
+            nIdx = i;
+        }
+    }
+    delete[] longest;
+    return list;
+}
+//获取最长递增子序列
+void AllAlgorithms::getLIS(const int *arr, const int *pre, int nIdx, vector<int> &list){
+    while (nIdx >= 0) {
+        list.push_back(arr[nIdx]);
+        nIdx = pre[nIdx];
+    }
+    reverse(list.begin(), list.end());
+}
+//打印
+void AllAlgorithms::_print(int *p, int size){
+    for (int i = 0; i < size; i ++) {
+        cout<<p[i]<<'\t';
+        
+    }
+    cout<<endl;
+}
 
 
 

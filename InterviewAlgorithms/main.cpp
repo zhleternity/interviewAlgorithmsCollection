@@ -42,5 +42,17 @@ int main() {
     string res2;
     aa.longestCommonSequence(str1, str2, res2);
     cout<<"LCS："<<res2<<endl;
+    
+    int array[] = {1,4,5,6,2,3,8,9,10,11,12,12,1};
+    int size = sizeof(array) / sizeof(int);
+    int *pre = new int[size];
+    int nIdx;
+    int max = aa.longestIncreasingSequence(array, size, pre, nIdx);
+    cout<<"LIS:"<<max<<endl;
+    vector<int> list;
+    aa.getLIS(array, pre, nIdx, list);
+    delete [] pre;
+    aa._print(&list.front(), (int)list.size());
+    
     return 0;
 }

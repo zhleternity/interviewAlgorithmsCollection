@@ -20,6 +20,7 @@ class AllAlgorithms{
 private:
     
     int max(int a,int b);
+    
 public:
     int largestRectArea(vector<int> &height);
     int gatherRain(vector<int> &A);
@@ -31,6 +32,9 @@ public:
     void reverseString(string &str,int idxFrom,int idxTo);
     void leftRotateMoving(string &str,int n,int m);
     void longestCommonSequence(const char *str1,const char *str2,string &res);
+    int longestIncreasingSequence(const int *p,int length,int *pre,int& nInx);
+    void getLIS(const int *arr,const int *pre,int nIdx,vector<int> &list);
+    void _print(int *p,int size);
 };
 
 #endif /* interviewAlg_hpp */
