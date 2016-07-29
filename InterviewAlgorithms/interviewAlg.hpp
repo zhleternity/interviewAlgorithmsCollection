@@ -43,8 +43,8 @@ public:
     bool getNextPermutation(int *a,int size);
     int bruteForceSearch(const char *str,const char *p);
     int KMPSearch(const char *text,const char *pattern,int *next,int n);
-    void getNext(char *p,int next[]);
-    void getNext2(char *p,int next[]);
+    void getNext(const char *p,int next[]);
+    void getNext2(const char *p,int next[]);
 };
 
 

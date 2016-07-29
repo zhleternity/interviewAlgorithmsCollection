@@ -67,8 +67,12 @@ int main() {
     const char *pattern = "BAB";
     int x1 = aa.bruteForceSearch(text, pattern);
     cout<<"暴力求解："<<x1<<endl;
-    
-    
+    int n = (int)strlen(text);
+    int next[n+1];
+    aa.getNext(pattern, next);
+    cout<<"next:"<<next<<endl;
+    int x2 = aa.KMPSearch(text, pattern, next, n);
+    cout <<"kmp:"<<x2<<endl;
     
     
     

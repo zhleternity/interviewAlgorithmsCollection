@@ -459,7 +459,7 @@ int AllAlgorithms::bruteForceSearch(const char *str, const char *p){
 
 //KMP算法求字符串匹配
 //求next数组
-void AllAlgorithms::getNext(char *p, int *next){
+void AllAlgorithms::getNext(const char *p, int *next){
     int length = (int)strlen(p);
     next[0] = -1;
     int k = -1;
@@ -479,7 +479,7 @@ void AllAlgorithms::getNext(char *p, int *next){
 }
 
 //求next数组的改进版
-void AllAlgorithms::getNext2(char *p, int *next){
+void AllAlgorithms::getNext2(const char *p, int *next){
     int length = (int)strlen(p);
     next[0] = -1;
     int k = -1;
