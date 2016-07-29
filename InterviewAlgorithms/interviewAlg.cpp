@@ -382,7 +382,22 @@ void AllAlgorithms::strFullPermutation(int *a, int size, int n){
     }
 }
 
-
+void AllAlgorithms::strFullPermutation1(int *a, int size, int n){
+    if (n == size-1) {
+        _print(a, size);
+        return;
+    }
+    int dup[256] = {0};
+    for (int i = 0; i < size; i ++) {
+        if (dup[a[i] == 1]) {
+            continue;
+        }
+        dup[a[i]] = 1;
+        swap(a[i], a[n]);
+        strFullPermutation1(a, size, n+1);
+        swap(a[i], a[n]);
+    }
+}
 
 
 
