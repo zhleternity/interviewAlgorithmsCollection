@@ -63,7 +63,10 @@ int main() {
     while(aa.getNextPermutation(b, sz))
         aa._print(b, sz);
     
-    
+    const char *text = "ABCDBABCA";
+    const char *pattern = "BAB";
+    int x1 = aa.bruteForceSearch(text, pattern);
+    cout<<"暴力求解："<<x1<<endl;
     
     
     
