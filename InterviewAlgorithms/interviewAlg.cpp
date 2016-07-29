@@ -458,7 +458,7 @@ int AllAlgorithms::bruteForceSearch(const char *str, const char *p){
 }
 
 //KMP算法求字符串匹配
-//求next数组
+//求next数组,前缀串和后缀穿的公共部分数
 void AllAlgorithms::getNext(const char *p, int *next){
     int length = (int)strlen(p);
     next[0] = -1;
@@ -517,11 +517,54 @@ int AllAlgorithms::KMPSearch(const char *text,const char *pattern,int *next,int 
     return answer;
 }
 
+//求最长回文子串--Manacher算法
+//回文：顺着读和倒着读都一样的字符串
+//回文子串的定义:
+//给定字符串str,若s同时满足以下条件:
+// s是str的子串
+// s是回文串
+// 则,s是str的回文子串。
+// 该算法的要求,是求str中最长的那个回文子串。
+//法1：枚举中心位置
+int AllAlgorithms::longestPalindrome(const char *s, int n){
+    int max,j;
+    if (0 == s || n < 1) {
+        return 0;
+    }
+    max = 0;
+    
+    for (int i = 0; i < n ; ++ i) {//i为回文串的中心
+        for ( j = 0; ((i - j) >= 0) && ((i+j) < n); ++j) {//如果回文串的长度是奇数
+            if (s[i-j] != s[i+j]) {
+                break;
+            }
+            if ((j * 2 + 1) > max) {
+                max = 2*j + 1;
+                
+            }
+        }
+        for (j = 0; ((i-j) >= 0) && ((i+j+1) < n); ++j) {//如果回文串的长度是偶数
+            if (s[i-j] != s[i+j+1]) {
+                break;
+            }
+            if ((j * 2 + 2) > max) {
+                max = 2*j + 2;
+                
+            }
+
+        }
+    }
+    return max;
+    
+
+}
 
 
 
 
-
+//BM算法,从尾部字符比较开始
+//Boyer-Moore算法是1977年Robert S. Boyer和 J Strother Moore发明的字符串匹配算法,最 坏情况下的时间复杂度为O(N) ,在实践中 比KMP算法的实际效能高。
+//BM算法不仅效率高,而且构思巧妙,容易 理解。
 
 
 

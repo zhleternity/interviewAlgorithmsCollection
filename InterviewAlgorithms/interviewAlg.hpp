@@ -45,6 +45,9 @@ public:
     int KMPSearch(const char *text,const char *pattern,int *next,int n);
     void getNext(const char *p,int next[]);
     void getNext2(const char *p,int next[]);
+    int longestPalindrome(const char *s,int n);
+    void Manacher(char *s,int *p);
+    void Manacher2(char *s,int *p);
 };
 
 
