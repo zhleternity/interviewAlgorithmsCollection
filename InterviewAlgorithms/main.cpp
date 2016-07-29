@@ -57,5 +57,32 @@ int main() {
     int a[] = {1,2,3,4};
     aa.recursionPermutation(a, sizeof(a)/sizeof(int), 0);
     
+    int b[] = {1,2,2,3};
+    int sz = sizeof(b)/sizeof(int);
+    aa._print(b, sz);
+    while(aa.getNextPermutation(b, sz))
+        aa._print(b, sz);
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     return 0;
 }

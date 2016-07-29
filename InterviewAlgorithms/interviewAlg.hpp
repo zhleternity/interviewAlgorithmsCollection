@@ -38,7 +38,13 @@ public:
     void recursionPermutation(int *a,int size,int n);
     bool isDuplicate(const int *a,int n,int t);
     void strFullPermutation(int *a,int size,int n);
-    void strFullPermutation1(int *a,int size,int n);
+    void strFullPermutation1(char *a,int size,int n);
+    void reverseTwo(int *from,int *to);
+    bool getNextPermutation(int *a,int size);
+    int bruteForceSearch(const char *str,const char *p);
+    int KMPSearch(const char *text,const char *pattern,int *next,int n);
+    void getNext(char *p,int next[]);
+    void getNext2(char *p,int next[]);
 };
 
 

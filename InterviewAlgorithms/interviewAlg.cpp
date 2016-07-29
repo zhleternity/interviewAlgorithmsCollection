@@ -381,10 +381,10 @@ void AllAlgorithms::strFullPermutation(int *a, int size, int n){
         swap(a[i], a[n]);
     }
 }
-
-void AllAlgorithms::strFullPermutation1(int *a, int size, int n){
+//空间换时间
+void AllAlgorithms::strFullPermutation1(char *a, int size, int n){
     if (n == size-1) {
-        _print(a, size);
+        _print((int *)a, size);
         return;
     }
     int dup[256] = {0};
@@ -398,6 +398,148 @@ void AllAlgorithms::strFullPermutation1(int *a, int size, int n){
         swap(a[i], a[n]);
     }
 }
+
+//非递归算法
+bool AllAlgorithms::getNextPermutation(int *a, int size){
+    //后找
+    int i = size - 2;
+    while ((i >= 0) && (a[i] >= a[i+1])) {
+        i --;
+    }
+    if (i < 0) {
+        return false;
+    }
+    //小大
+    int j = size - 1;
+    while(a[j] <= a[i])
+        j --;
+    //交换
+    swap(a[j], a[i]);
+    //翻转
+    reverseTwo(a+i+1, a+size-1);
+    return true;
+}
+
+//翻转
+void AllAlgorithms::reverseTwo(int *from, int *to){
+    int t;
+    while (from < to) {
+        t = *from;
+        *from = *to;
+        *to = t;
+        from ++;
+        to --;
+    }
+}
+
+
+//字符串查找问题
+// 给定文本串text和模式串pattern,从文本串text中找出模 式串pattern第一次出现的位置。
+
+//查找str中首次出现p的位置
+int AllAlgorithms::bruteForceSearch(const char *str, const char *p){
+    int i = 0;//当前匹配到的文本串首位
+    int j = 0;//模式串的匹配位置
+    int size = (int)strlen(p);
+    int remindNum = (int)strlen(str) - size;
+    while ((i <= remindNum) && (j < size)) {
+        if (str[i+j] == p[j]) {
+            j ++;//若匹配，模式串匹配位置后移
+        }
+        else{
+            i ++;
+            j = 0;//不匹配，比对下一个位置，模式串回到首位
+        }
+    }
+    if (j >= size) {
+        return i;
+    }
+    return -1;
+}
+
+//KMP算法求字符串匹配
+//求next数组
+void AllAlgorithms::getNext(char *p, int *next){
+    int length = (int)strlen(p);
+    next[0] = -1;
+    int k = -1;
+    int j = 0;
+    while (j < length - 1) {
+        //此时，k即next[j-1],且p[k]表示前缀，p[j]表示后缀
+        //注：k == -1 表示未找到k前缀与k后缀相等，首次分析可先忽略
+        if (k == -1 || p[j] == p[k]) {
+            ++ j;
+            ++ k;
+            next[j] = k;
+        }
+        else{//p[j]与p[k]匹配失败，则继续递归计算前缀p[next[k]]
+            k = next[k];
+        }
+    }
+}
+
+//求next数组的改进版
+void AllAlgorithms::getNext2(char *p, int *next){
+    int length = (int)strlen(p);
+    next[0] = -1;
+    int k = -1;
+    int j = 0;
+    while (j < length - 1) {
+        if (-1 == k || p[j] == p[k]) {
+            ++ j;
+            ++ k;
+            if(p[j] == p[k])
+                next[j] = next[k];
+            else
+                next[j] = k;
+        }
+        else{
+            k = next[k];
+        }
+    }
+}
+int AllAlgorithms::KMPSearch(const char *text,const char *pattern,int *next,int n){
+    int answer = -1;
+    int i = 0,j = 0;
+    int lengthPattern = (int)strlen(pattern);
+    while (i < n) {
+        if (-1 == j || text[i] == pattern[j]) {
+            ++ i;
+            ++ j;
+        }
+        else
+            j = next[j];
+        if (j == lengthPattern) {
+            answer = i - lengthPattern;
+            break;
+        }
+    }
+    return answer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
