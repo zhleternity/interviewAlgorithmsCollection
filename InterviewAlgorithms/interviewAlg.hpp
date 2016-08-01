@@ -49,6 +49,7 @@ public:
     int longestPalindrome(const char *s,int n);
     void Manacher(char *s,int *p);
     void Manacher2(char *s,int *p);
+    int getLocalMaximum(const int *array,int n);
 };
 
 

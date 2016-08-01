@@ -86,6 +86,11 @@ int main() {
     }
     
     
+    const int in[8] = {1,8,4,3,9,0,3,4};
+    int max3 = aa.getLocalMaximum(in, 8);
+    cout<<"local max:"<<in[max3]<<endl;
+    
+    
     
     
     

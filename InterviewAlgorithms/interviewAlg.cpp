@@ -617,7 +617,22 @@ void AllAlgorithms::Manacher2(char *s, int *p)
 //Boyer-Moore算法是1977年Robert S. Boyer和 J Strother Moore发明的字符串匹配算法,最 坏情况下的时间复杂度为O(N) ,在实践中 比KMP算法的实际效能高。
 //BM算法不仅效率高,而且构思巧妙,容易 理解。
 
-
+//求局部最大值
+int AllAlgorithms::getLocalMaximum(const int *array,int n){
+    int left = 0;
+    int right = n - 1;
+    int mid;
+    while (left < right) {
+        mid = (left + right) / 2;
+        cout<<mid<<endl;
+        if(array[mid] > array[mid + 1])
+            right = mid;
+        else
+            left = mid + 1;
+        
+    }
+    return array[left];
+}
 
 
 
