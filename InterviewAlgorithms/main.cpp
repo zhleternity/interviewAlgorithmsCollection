@@ -75,6 +75,18 @@ int main() {
     cout <<"kmp:"<<x2<<endl;
     
     const char *str3 = "12212321";
+    int max2 = aa.longestPalindrome(str3, (int)strlen(str3));
+    cout<<"plaindrome:"<<max2<<endl;
+    
+    char *str4 = "12212321";
+    int P[9];
+    aa.Manacher2(str4, P);
+    for (int i = 0; i < 9; i ++) {
+        cout<<"Manacher:"<<P[i]<<endl;
+    }
+    
+    
+    
     
     
     
