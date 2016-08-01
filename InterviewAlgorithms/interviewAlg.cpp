@@ -16,6 +16,11 @@
 int AllAlgorithms::max(int a, int b){
     return ((a+b) + abs(a-b))/2;
 }
+//求两个数中的最小值
+int AllAlgorithms::min(int a, int b){
+    return ((a+b) - abs(a-b))/2;
+}
+
 //直方图矩形最大面积
 //给定n个非负整数,表示直方图的方柱的高 度,同时,每个方柱的宽度假定都为1;试 找出直方图中最大的矩形面积。如:给定高 度为:2,1,5,6,2,3,最大面积为10。
 int AllAlgorithms::largestRectArea(vector<int> &height){
@@ -559,6 +564,52 @@ int AllAlgorithms::longestPalindrome(const char *s, int n){
 
 }
 
+void AllAlgorithms::Manacher(char *s, int *p){
+    int size = (int)strlen(s);
+    p[0] = 1;
+    int id = 0,mx = 1;
+    for (int i = 1; i < size; i ++) {
+        if (mx > i) {
+            p[i] = min(p[2*id - i], mx- i);
+        }
+        else
+            p[i] = 1;
+        for (; s[i+p[i]] == s[i- p[i]]; p[i] ++);
+        
+        if (mx < i + p[i]) {
+            mx = i + p[i];
+            id = i;
+        }
+    }
+    
+}
+//改进版
+void AllAlgorithms::Manacher2(char *s, int *p)
+{
+    int size = (int)strlen(s);
+    p[0] = 1;
+    int id = 0,mx = 1;
+    for (int i = 1; i < size; i++) {
+        if (mx > i) {
+            if (p[2*id- i] != mx- i) {
+                p[i] = min(p[2*id- i], mx-i);
+            }
+            else{
+                p[i] = p[2*id- i];
+                for (; s[i+p[i]] == s[i-p[i]]; p[i] ++);
+            }
+        }
+        else{
+            p[i] = 1;
+            for (; s[i+p[i]] == s[i-p[i]]; p[i] ++);
+        }
+        
+        if (mx < i + p[i]) {
+            mx = i + p[i];
+            id = i;
+        }
+    }
+}
 
 
 

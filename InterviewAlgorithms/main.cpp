@@ -74,6 +74,8 @@ int main() {
     int x2 = aa.KMPSearch(text, pattern, next, n);
     cout <<"kmp:"<<x2<<endl;
     
+    const char *str3 = "12212321";
+    
     
     
     
