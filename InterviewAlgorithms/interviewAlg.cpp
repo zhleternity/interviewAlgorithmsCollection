@@ -664,7 +664,21 @@ int AllAlgorithms::findFirstMissNumber(int *a, int size){
     
 }
 
-
+//查找滚动数组的最小值
+int AllAlgorithms::findRollingMin(int *a, int size){
+    int low = 0;
+    int high = size - 1;
+    int middle;
+    while (low < high) {
+        middle = (high + low)/2;
+        if (a[middle] < a[high]) {
+            high = middle;//half-left section
+        }
+        else if (a[middle] > a[high])
+            low = middle + 1;//half-right section
+    }
+    return a[low];
+}
 
 
 

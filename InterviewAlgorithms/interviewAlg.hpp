@@ -51,6 +51,7 @@ public:
     void Manacher2(char *s,int *p);
     int getLocalMaximum(const int *array,int n);
     int findFirstMissNumber(int *a,int size);
+    int findRollingMin(int *a,int size);
     
     
     
