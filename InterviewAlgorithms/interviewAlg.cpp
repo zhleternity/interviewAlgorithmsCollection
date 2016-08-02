@@ -637,8 +637,11 @@ int AllAlgorithms::getLocalMaximum(const int *array,int n){
 
 //找出第一个不在数组中的正整数
 int AllAlgorithms::findFirstMissNumber(int *a, int size){
-    a --;//从1开始数
-    int i = 1;
+    a --;//第一个元素置零
+//    for (int i = 0; i < size; i ++) {
+//        cout<<a[i]<<endl;
+//    }
+    int i = 1;//从零开始数
     while (i <= size) {
         if (a[i] == i) {
             i ++;
@@ -648,8 +651,14 @@ int AllAlgorithms::findFirstMissNumber(int *a, int size){
             a[i] = a[size];
             size --;
         }
-        else
+        else{
+            cout<<"a[i]:"<<a[i]<<endl;
+            cout<<"a[a[i]]:"<<a[a[i]]<<endl;
+
             swap(a[a[i]], a[i]);
+            cout<<"a[i]:"<<a[i]<<endl;
+            cout<<"a[a[i]]:"<<a[a[i]]<<endl;
+        }
     }
     return i;
     
