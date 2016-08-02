@@ -93,6 +93,9 @@ int main() {
     int m = aa.findFirstMissNumber(c, sizeof(c)/sizeof(int));
     cout<<"miss number:"<<m<<endl;
     
+    int roll[] = {4,6,7,0,2,3};
+    int min1 = aa.findRollingMin(roll, sizeof(roll)/sizeof(int));
+    cout<<"rolling array:"<<min1<<endl;
     
     
     
