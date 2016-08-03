@@ -706,10 +706,16 @@ int AllAlgorithms::sumMaxSubArray(const int *a, int size){
         return 0;
     int sum = a[0];//当前子串的和
     int result = sum;//当前找到的最优解
-    for (<#initialization#>; <#condition#>; <#increment#>) {
-        <#statements#>
+    for (int i = 1; i < size; i ++) {
+        if(sum > 0)
+            sum = sum + a[i];
+        else
+            sum = a[i];
+        result = max(sum, result);
+        
     }
-    
+    return result;
+}
 
 
 
