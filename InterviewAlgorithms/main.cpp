@@ -103,6 +103,10 @@ int main() {
     const int sub2[] = {1,-2,3,10,-4,7,2,-5};
     int max4 = aa.sumMaxSubArray(sub2, sizeof(sub2)/sizeof(int));
     cout<<"max sub:"<<max4<<endl;
+    int from ,to;
+    int max5 = aa.sumMaxSubArray2(sub2, sizeof(sub2)/sizeof(int), from, to);
+    cout<<"max5:"<<max5<<endl;
+    cout<<"from:"<<from<<","<<"to:"<<to<<endl;
     
     
     
