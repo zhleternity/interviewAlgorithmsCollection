@@ -700,6 +700,16 @@ int AllAlgorithms::sumZeroSubArray(const int *a, int size){
 }
 
 
+//求和最大的连续子数组
+int AllAlgorithms::sumMaxSubArray(const int *a, int size){
+    if (! a || (size <= 0))
+        return 0;
+    int sum = a[0];//当前子串的和
+    int result = sum;//当前找到的最优解
+    for (<#initialization#>; <#condition#>; <#increment#>) {
+        <#statements#>
+    }
+    
 
 
 
