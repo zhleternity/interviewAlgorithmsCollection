@@ -680,10 +680,24 @@ int AllAlgorithms::findRollingMin(int *a, int size){
     return a[low];
 }
 
-
-
-
-
+//零子数组：求对于长度为N的数组A,求连续子数组的 和最接近0的值
+int AllAlgorithms::sumZeroSubArray(const int *a, int size){
+    int *sum = new int[size + 1];//和
+    sum[0] = 0;
+    for (int i = 0; i < size; i ++) {
+        sum[i+1] = sum[i] + a[i];
+    }
+    
+    sort(sum, sum+size+1);
+    int diff = abs(sum[1] - sum[0]);
+    int result = diff;
+    for (int i = 1; i < size; i ++) {
+        diff = abs(sum[i+1] - sum[i]);
+        result = min(diff, result);
+    }
+    delete [] sum;
+    return result;
+}
 
 
 

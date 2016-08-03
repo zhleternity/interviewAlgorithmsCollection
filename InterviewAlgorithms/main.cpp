@@ -97,7 +97,9 @@ int main() {
     int min1 = aa.findRollingMin(roll, sizeof(roll)/sizeof(int));
     cout<<"rolling array:"<<min1<<endl;
     
-    
+    const int sub[] = {1,-2,3,10,-4,7,2,-5};
+    int min2 = aa.sumZeroSubArray(sub, sizeof(sub)/sizeof(int));
+    cout<<"sub:"<<min2<<endl;
     
     
     

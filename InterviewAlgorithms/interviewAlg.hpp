@@ -52,7 +52,7 @@ public:
     int getLocalMaximum(const int *array,int n);
     int findFirstMissNumber(int *a,int size);
     int findRollingMin(int *a,int size);
-    
+    int sumZeroSubArray(const int *a,int size);
     
     
     
