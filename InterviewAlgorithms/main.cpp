@@ -98,13 +98,16 @@ int main() {
     cout<<"rolling array:"<<min1<<endl;
     
     const int sub[] = {1,-2,3,10,-4,7,2,-5};
+    const int sub1[] = {1,-4,7,2,-5,-2,3,10};
     int min2 = aa.sumZeroSubArray(sub, sizeof(sub)/sizeof(int));
     cout<<"sub:"<<min2<<endl;
-    const int sub2[] = {1,-2,3,10,-4,7,2,-5};
-    int max4 = aa.sumMaxSubArray(sub2, sizeof(sub2)/sizeof(int));
+    int from1,to1;
+    aa.sumZeroSubArray2(sub1, sizeof(sub1)/sizeof(int), min2, from1, to1);
+    cout<<"from_min:"<<from1<<","<<"to_min:"<<to1<<endl;
+    int max4 = aa.sumMaxSubArray(sub, sizeof(sub)/sizeof(int));
     cout<<"max sub:"<<max4<<endl;
     int from ,to;
-    int max5 = aa.sumMaxSubArray2(sub2, sizeof(sub2)/sizeof(int), from, to);
+    int max5 = aa.sumMaxSubArray2(sub, sizeof(sub)/sizeof(int), from, to);
     cout<<"max5:"<<max5<<endl;
     cout<<"from:"<<from<<","<<"to:"<<to<<endl;
     

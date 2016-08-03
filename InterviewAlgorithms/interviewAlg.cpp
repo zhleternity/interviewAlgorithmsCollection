@@ -698,7 +698,42 @@ int AllAlgorithms::sumZeroSubArray(const int *a, int size){
     delete [] sum;
     return result;
 }
-
+//返回零子数组
+void AllAlgorithms::sumZeroSubArray2(const int *a, int size, int min,int &fromIdx, int &toIdx){
+    if (! a || (size <= 0)) {
+        fromIdx = -1;
+        toIdx = -1;
+    }
+    vector<int> negIdx;
+    for (int i = 0; i < size; i ++) {
+        if(a[i] < 0)
+           negIdx.push_back(i);
+    }
+    int n = (int)negIdx.size();
+    for (int i = 0; i < n; i ++) {
+        int from = negIdx[i % n];
+        int to = negIdx[(i+1) % n];
+        int sum = 0;
+        for (int j = from; j <= to; j ++)
+            sum = sum + a[j];
+        if(sum  == min)
+        {
+            if(from < to)
+            {
+                fromIdx = from;
+                toIdx = to;
+            }
+            else
+            {
+                swap(from, to);
+                fromIdx = from;
+                toIdx = to;
+            }
+            break;
+        }
+    }
+    
+}
 
 //求和最大的连续子数组的和
 int AllAlgorithms::sumMaxSubArray(const int *a, int size){
