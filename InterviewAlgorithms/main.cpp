@@ -100,8 +100,9 @@ int main() {
     const int sub[] = {1,-2,3,10,-4,7,2,-5};
     int min2 = aa.sumZeroSubArray(sub, sizeof(sub)/sizeof(int));
     cout<<"sub:"<<min2<<endl;
-    
-    
+    const int sub2[] = {1,-2,3,10,-4,7,2,-5};
+    int max4 = aa.sumMaxSubArray(sub2, sizeof(sub2)/sizeof(int));
+    cout<<"max sub:"<<max4<<endl;
     
     
     

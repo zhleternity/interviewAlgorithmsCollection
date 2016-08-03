@@ -54,7 +54,7 @@ public:
     int findRollingMin(int *a,int size);
     int sumZeroSubArray(const int *a,int size);
     int sumMaxSubArray(const int *a,int size);
-    
+    int sumMaxSubArray2(const int *a,int size,int &fromIdx,int &toIdx);
     
     
     

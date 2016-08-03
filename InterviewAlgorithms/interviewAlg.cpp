@@ -700,7 +700,7 @@ int AllAlgorithms::sumZeroSubArray(const int *a, int size){
 }
 
 
-//求和最大的连续子数组
+//求和最大的连续子数组的和
 int AllAlgorithms::sumMaxSubArray(const int *a, int size){
     if (! a || (size <= 0))
         return 0;
@@ -716,7 +716,35 @@ int AllAlgorithms::sumMaxSubArray(const int *a, int size){
     }
     return result;
 }
-
+//求出最大和子数组
+int AllAlgorithms::sumMaxSubArray2(const int *a, int size, int &fromIdx, int &toIdx){
+    if(!a || (size <= 0))
+    {
+        fromIdx = toIdx = -1;
+        return 0;
+    }
+    int sum = a[0];
+    int result = sum;
+    fromIdx = toIdx = 0;
+    int newStart = 0;//新的子数组起点
+    for (int i = 1; i < size; i ++) {
+        if(sum > 0)
+            sum += a[i];
+        else
+        {
+            sum = a[i];
+            newStart = i;
+            
+        }
+        if (result < sum) {
+            result = sum;
+            fromIdx = newStart;
+            toIdx = i;
+        }
+    }
+    
+    return result;
+}
 
 
 
