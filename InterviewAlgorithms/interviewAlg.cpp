@@ -809,8 +809,34 @@ void AllAlgorithms::hollandNationalFlag(int *a, int length){
     }
 }
 
+//improvement1
 
-
+void AllAlgorithms::hollandNationalFlag2(int *a, int length){
+    int begin = 0;
+    int end = length - 1;
+    int curr = 0;
+    while (curr <= end) {//until the end is recolosing to the curr
+        if (1 == a[curr]) {
+            curr ++;
+        }
+        else if (2 == a[curr]){
+            swap(a[curr], a[end]);
+            end --;
+        }
+        else{
+            if (curr == begin) {
+                begin ++;
+                curr ++;
+            }
+            else{
+                swap(a[begin], a[curr]);
+                begin ++;
+                curr ++;//because when begin is not equal to the curr,the begin must be equal to 1,after swapping,both begin and curr are equal to 1,hence,curr ++
+            }
+            
+        }
+    }
+}
 
 
 
