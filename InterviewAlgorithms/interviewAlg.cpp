@@ -824,16 +824,10 @@ void AllAlgorithms::hollandNationalFlag2(int *a, int length){
             end --;
         }
         else{
-            if (curr == begin) {
-                begin ++;
-                curr ++;
-            }
-            else{
-                swap(a[begin], a[curr]);
-                begin ++;
-                curr ++;//because when begin is not equal to the curr,the begin must be equal to 1,after swapping,both begin and curr are equal to 1,hence,curr ++
-            }
-            
+            if (curr != begin)
+                swap( a[begin], a[curr]);
+            begin ++;
+            curr ++;//because when begin is not equal to the curr,the begin must be equal to 1,after swapping,both begin and curr are equal to 1,hence,curr ++
         }
     }
 }
