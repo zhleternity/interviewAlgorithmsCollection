@@ -56,7 +56,8 @@ public:
     void sumZeroSubArray2(const int *a,int size,int min,int &fromIdx,int &toIdx);
     int sumMaxSubArray(const int *a,int size);
     int sumMaxSubArray2(const int *a,int size,int &fromIdx,int &toIdx);
-    
+    void hollandNationalFlag(int *a, int length);
+    void hollandNationalFlag2(int *a, int length);
     
     
     

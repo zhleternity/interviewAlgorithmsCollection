@@ -781,7 +781,33 @@ int AllAlgorithms::sumMaxSubArray2(const int *a, int size, int &fromIdx, int &to
     return result;
 }
 
+//荷兰国旗问题:red:0,white:1,blue:2
 
+void AllAlgorithms::hollandNationalFlag(int *a, int length){
+    int begin = 0;
+    int current = 0;
+    int end = length - 1;
+    while (current <= end) {
+        if (2 == a[current]) {
+            swap(a[end], a[current]);
+            end --;
+        }
+        else if (1 == a[current])
+            current ++;
+        else
+        {
+            if (begin == current) {
+                begin ++;
+                current ++;
+            }
+            else
+            {
+                swap(a[current], a[begin]);
+                begin ++;
+            }
+        }
+    }
+}
 
 
 
