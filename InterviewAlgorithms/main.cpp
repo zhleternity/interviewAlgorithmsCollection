@@ -111,7 +111,12 @@ int main() {
     cout<<"max5:"<<max5<<endl;
     cout<<"from:"<<from<<","<<"to:"<<to<<endl;
     
-    
+    int hol[] = {0,1,2,1,1,2,0,2,1,0};
+    aa.hollandNationalFlag(hol, sizeof(hol)/sizeof(int));
+    for (int i = 0; i < 10; i ++) {
+        cout<<hol[i];
+//        cout<<endl;
+    }
     
     
     
