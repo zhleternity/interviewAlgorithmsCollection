@@ -89,10 +89,7 @@ public:
 
 
 //桶排序
-class tagSBucket{
-private:
-    
-public:
+typedef struct tagSBucket{
     bool bValid;
     int nMin;
     int nMax;
@@ -112,7 +109,7 @@ public:
                 nMin = n;
         }
     }
-};
+}sBucket;
 
 
 #endif /* interviewAlg_hpp */
