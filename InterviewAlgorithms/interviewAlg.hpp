@@ -82,6 +82,27 @@ public:
     
     
     
+    
+};
+
+
+
+//桶排序
+class tagSBucket{
+private:
+    bool bValid;
+    int nMin;
+    int nMax;
+    tagSBucket(): bValid(false) {}
+public:
+    void nAdd(int n)
+    {
+        if(! bValid){
+            nMin = n;
+            nMax = n;
+            
+        }
+    }
 };
 
 
