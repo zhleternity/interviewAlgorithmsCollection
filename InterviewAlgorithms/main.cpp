@@ -118,7 +118,9 @@ int main() {
 //        cout<<endl;
     }
     
-    
+    const int buc[] = {1,7,14,9,4,13};
+    int gap = aa.calcMaxGapOfArray(buc, sizeof(buc)/sizeof(int));
+    cout<<"max gap:"<<gap<<endl;
     
     
     
