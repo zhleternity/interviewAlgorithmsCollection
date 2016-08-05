@@ -847,21 +847,21 @@ int AllAlgorithms::calcMaxGapOfArray(const int *a, int size){
     
     //push the data into the bucket
     int diff = sbMax - sbMin;
-    int sbBucket;
+    int bucketIdx;//index of bucket
     for (int i = 0; i < size; i ++) {
-        sbBucket = (a[i] - sbMin) * size / diff;
-        if(sbBucket >= size)
-            sbBucket = size - 1;
-        sbs[sbBucket].nAdd(a[i]);
+        bucketIdx = (a[i] - sbMin) * size / diff;
+        if(bucketIdx >= size)
+            bucketIdx = size - 1;
+        sbs[bucketIdx].nAdd(a[i]);
     }
     //compute the gap
-    int k = 0;
+    int k = 0;//first bucket
     
     int sbGap = diff / size;
     int gapTmp;
     for (int j = 1; j < size; j ++) {
         if (sbs[j].bValid) {
-            gapTmp = sbs[j].nMin - sbs[k].nMax;
+            gapTmp = sbs[j].nMin - sbs[k].nMax;//k is the preone ,j is the next one
             if(sbGap < gapTmp)
                 sbGap = gapTmp;
             k = j;
