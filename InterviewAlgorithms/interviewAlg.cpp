@@ -344,6 +344,15 @@ void AllAlgorithms::_print(int *p, int size){
     cout<<endl;
 }
 
+void AllAlgorithms::_print1(bool *p, int size){
+    for (int i = 0; i < size; i ++) {
+        cout<<p[i]<<'\t';
+        
+    }
+    cout<<endl;
+}
+
+
 //字符串的全排列
 //给定字符串S[0...N-1],设计算法,枚举S的 全排列。
 //递归算法
@@ -883,5 +892,20 @@ void AllAlgorithms::cantorExpansion(const int *a, int *b, int size)
     }
 }
 
-
+//N-sum problem  is a N-P problem
+//直接递归
+void AllAlgorithms::enumNUmber(int *a,bool *res, int size,int k, int sumCurr,int sum){
+    if(k >= size)
+        return;
+    if (sumCurr + a[k] == sum) {
+        res[k] = true;
+        int sz = sizeof(res) / sizeof(bool);
+        _print1(res, sz);
+        res[k] = false;
+    }
+    res[k] = true;
+    enumNUmber(a, res, size, k+1, sumCurr + a[k], sum);
+    res[k] = false;
+    enumNUmber(a, res, size, k+1, sumCurr , sum);
+}
 

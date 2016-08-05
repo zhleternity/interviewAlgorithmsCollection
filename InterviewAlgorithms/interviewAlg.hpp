@@ -36,6 +36,7 @@ public:
     int longestIncreasingSequence(const int *p,int length,int *pre,int& nInx);
     void getLIS(const int *arr,const int *pre,int nIdx,vector<int> &list);
     void _print(int *p,int size);
+    void _print1(bool *p, int size);
     void recursionPermutation(int *a,int size,int n);
     bool isDuplicate(const int *a,int n,int t);
     void strFullPermutation(int *a,int size,int n);
@@ -60,7 +61,7 @@ public:
     void hollandNationalFlag2(int *a, int length);
     int calcMaxGapOfArray(const int *a,int size);
     void cantorExpansion(const int *a,int *b,int size);
-    
+    void enumNUmber(int *a,bool *res,int size,int k,int sumCurr,int sum);
     
     
     

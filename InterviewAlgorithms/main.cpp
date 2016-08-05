@@ -124,11 +124,18 @@ int main() {
     
     const int can[] = {3,4,1,2,1,0};
     int size2 = sizeof(can)/sizeof(int);
-    int *origin = new int[size];
+    int *origin = new int[size2];
     aa.cantorExpansion(can, origin, size2);
     aa._print(origin, size2);
     delete [] origin;
     
+    int en[] = {1,2,3,4,5};
+    int size3 = sizeof(en) / sizeof(int);
+    int sum = 10;
+    bool *x = new bool[size3];
+    memset(x, 0, size3);
+    aa.enumNUmber(en, x, size3, 0, 0, sum);
+    delete [] x;
     
     
     
