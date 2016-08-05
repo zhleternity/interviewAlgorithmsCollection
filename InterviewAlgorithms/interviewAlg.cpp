@@ -1,4 +1,4 @@
-//
+
 //  interviewAlg.cpp
 //  InterviewAlgorithms
 //
@@ -871,7 +871,17 @@ int AllAlgorithms::calcMaxGapOfArray(const int *a, int size){
     
 }
 
-
+//cantor array
+void AllAlgorithms::cantorExpansion(const int *a, int *b, int size)
+{
+    for (int i = 0; i < size; i ++) {
+        b[i] = 0;
+        for (int j = i + 1; j < size; j ++) {
+            if(a[j] < a[i])
+                b[i] ++;
+        }
+    }
+}
 
 
 

@@ -59,7 +59,7 @@ public:
     void hollandNationalFlag(int *a, int length);
     void hollandNationalFlag2(int *a, int length);
     int calcMaxGapOfArray(const int *a,int size);
-    
+    void cantorExpansion(const int *a,int *b,int size);
     
     
     

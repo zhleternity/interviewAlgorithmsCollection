@@ -122,6 +122,12 @@ int main() {
     int gap = aa.calcMaxGapOfArray(buc, sizeof(buc)/sizeof(int));
     cout<<"max gap:"<<gap<<endl;
     
+    const int can[] = {3,4,1,2,1,0};
+    int size2 = sizeof(can)/sizeof(int);
+    int *origin = new int[size];
+    aa.cantorExpansion(can, origin, size2);
+    aa._print(origin, size2);
+    delete [] origin;
     
     
     
