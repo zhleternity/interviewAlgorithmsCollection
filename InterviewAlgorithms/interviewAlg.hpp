@@ -58,6 +58,7 @@ public:
     int sumMaxSubArray2(const int *a,int size,int &fromIdx,int &toIdx);
     void hollandNationalFlag(int *a, int length);
     void hollandNationalFlag2(int *a, int length);
+    int calcMaxGapOfArray(const int *a,int size);
     
     
     
@@ -90,17 +91,25 @@ public:
 //桶排序
 class tagSBucket{
 private:
+    
+public:
     bool bValid;
     int nMin;
     int nMax;
     tagSBucket(): bValid(false) {}
-public:
+    //add the number of 'n' into the bucket
     void nAdd(int n)
     {
         if(! bValid){
             nMin = n;
             nMax = n;
-            
+            bValid = true;
+        }
+        else{
+            if(nMax < n)
+                nMax = n;
+            else if (nMin > n)
+                nMin = n;
         }
     }
 };

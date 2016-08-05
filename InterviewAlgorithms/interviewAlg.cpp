@@ -832,7 +832,44 @@ void AllAlgorithms::hollandNationalFlag2(int *a, int length){
     }
 }
 
-
+//compute the max gap int an array
+int AllAlgorithms::calcMaxGapOfArray(const int *a, int size){
+    vector<tagSBucket> sbs;
+    int sbMax = a[0];
+    int sbMin = a[0];
+    //find the max and min value
+    for (int i = 1; i < size; i ++) {
+        if(sbMax < a[i])
+            sbMax = a[i];
+        else if (sbMin > a[i])
+            sbMin = a[i];
+    }
+    
+    //push the data into the bucket
+    int diff = sbMax - sbMin;
+    int sbBucket;
+    for (int i = 0; i < size; i ++) {
+        sbBucket = (a[i] - sbMin) * size / diff;
+        if(sbBucket >= size)
+            sbBucket = size - 1;
+        sbs[sbBucket].nAdd(a[i]);
+    }
+    //compute the gap
+    int k = 0;
+    
+    int sbGap = diff / size;
+    int gapTmp;
+    for (int j = 1; j < size; j ++) {
+        if (sbs[j].bValid) {
+            gapTmp = sbs[j].nMin - sbs[k].nMax;
+            if(sbGap < gapTmp)
+                sbGap = gapTmp;
+            k = j;
+        }
+    }
+    return sbGap;
+    
+}
 
 
 
