@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A29F0F21D55962E00846EEF /* HLTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A29F0F01D55962E00846EEF /* HLTree.cpp */; };
 		3AE0655A1D475C6F00E6F55F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AE065591D475C6F00E6F55F /* main.cpp */; };
 		3AE065621D475CB100E6F55F /* interviewAlg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AE065601D475CB100E6F55F /* interviewAlg.cpp */; };
 /* End PBXBuildFile section */
@@ -24,6 +25,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3A29F0F01D55962E00846EEF /* HLTree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HLTree.cpp; sourceTree = "<group>"; };
+		3A29F0F11D55962E00846EEF /* HLTree.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HLTree.hpp; sourceTree = "<group>"; };
 		3AE065561D475C6F00E6F55F /* InterviewAlgorithms */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = InterviewAlgorithms; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AE065591D475C6F00E6F55F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3AE065601D475CB100E6F55F /* interviewAlg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = interviewAlg.cpp; sourceTree = "<group>"; };
@@ -63,6 +66,8 @@
 				3AE065591D475C6F00E6F55F /* main.cpp */,
 				3AE065601D475CB100E6F55F /* interviewAlg.cpp */,
 				3AE065611D475CB100E6F55F /* interviewAlg.hpp */,
+				3A29F0F01D55962E00846EEF /* HLTree.cpp */,
+				3A29F0F11D55962E00846EEF /* HLTree.hpp */,
 			);
 			path = InterviewAlgorithms;
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A29F0F21D55962E00846EEF /* HLTree.cpp in Sources */,
 				3AE065621D475CB100E6F55F /* interviewAlg.cpp in Sources */,
 				3AE0655A1D475C6F00E6F55F /* main.cpp in Sources */,
 			);
@@ -245,6 +251,7 @@
 				3AE0655F1D475C6F00E6F55F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
