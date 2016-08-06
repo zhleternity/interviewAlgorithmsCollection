@@ -56,9 +56,9 @@ public:
     bool Insert2(int value);
     bool Delete(int value);
     MYTreeNode* Find(int value) const;
-    void PreOrderNot(Visit visit) const;
-    void MiddleOrderNot(Visit visit) const;
-    void PostOrderNot(Visit visit) const;
+    void PreOrder(Visit visit) const;
+    void MiddleOrder(Visit visit) const;
+    void PostOrder(Visit visit) const;
     
 };
 

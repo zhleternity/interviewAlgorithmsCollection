@@ -141,8 +141,9 @@ bool HLBinaryTree::Delete(int value){
 
 }
 
+//pre order visit
 
-
+void HLBinaryTree::pre
 
 
 
