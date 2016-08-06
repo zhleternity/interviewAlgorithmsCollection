@@ -74,9 +74,30 @@ bool HLBinaryTree::insertNot(int value)
     return true;
 }
 
+//delete
+void HLBinaryTree::delteChildless(MYTreeNode *pParent, MYTreeNode *pNode){
+    if(pNode == pRoot)
+        pRoot = NULL;
+    else if (pParent -> pLeft == pNode)
+        pParent = NULL;
+    else
+        pParent -> pRight = NULL;
+    delete pNode;
+}
 
 
+void HLBinaryTree::deleteSingleSon(MYTreeNode *pParent, MYTreeNode *pNode){
+    MYTreeNode *pGrandSon = pNode -> pLeft ? pNode -> pLeft : pNode -> pRight;
+    if(pNode == pRoot)
+        pRoot = pGrandSon;
+    else if (pParent -> pLeft == pNode)
+        pParent -> pLeft = pGrandSon;
+    else
+        pParent -> pRight = pGrandSon;
+    delete pNode;
+}
 
+bool 
 
 
 
