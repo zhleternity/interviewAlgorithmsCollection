@@ -12,6 +12,9 @@
 #include <algorithm>
 
 
+using namespace std;
+
+
 //二分查找
 MYTreeNode* HLBinaryTree::Find(int value) const{
     if(!pRoot)
@@ -143,10 +146,37 @@ bool HLBinaryTree::Delete(int value){
 
 //pre order visit
 
-void HLBinaryTree::pre
+void HLBinaryTree::PreOrder(Visit visit)const{
+    preOrderNot(visit);
+}
 
+void HLBinaryTree::preOrder(MYTreeNode *pRoot, Visit visit) const
+{
+    if (pRoot) {
+        visit(pRoot -> value);
+        preOrder(pRoot -> pLeft, visit);
+        preOrder(pRoot -> pRight, visit);
+        
+    }
+}
 
-
+void HLBinaryTree::preOrderNot(Visit visit)const
+{
+    if(!pRoot)
+        return;
+    stack<MYTreeNode*> s;
+    s.push(pRoot);
+    MYTreeNode *pCurr;
+    while (! s.empty()) {
+        pCurr = s.top();
+        s.pop();
+        visit(pCurr -> value);
+        if(pCurr -> pRight)
+            s.push(pCurr -> pRight);
+        else if (pCurr -> pLeft)
+            s.push(pCurr -> pLeft);
+    }
+}
 
 
 
