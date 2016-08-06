@@ -75,7 +75,7 @@ bool HLBinaryTree::insertNot(int value)
 }
 
 //delete
-void HLBinaryTree::delteChildless(MYTreeNode *pParent, MYTreeNode *pNode){
+void HLBinaryTree::deleteChildless(MYTreeNode *pParent, MYTreeNode *pNode){
     if(pNode == pRoot)
         pRoot = NULL;
     else if (pParent -> pLeft == pNode)
@@ -97,7 +97,49 @@ void HLBinaryTree::deleteSingleSon(MYTreeNode *pParent, MYTreeNode *pNode){
     delete pNode;
 }
 
-bool 
+bool HLBinaryTree::Delete(int value){
+    if(!pRoot)
+        return false;
+    MYTreeNode *pNode = pRoot;
+    MYTreeNode *pParent = NULL;
+    while (pNode) {
+        if (value < pNode -> value) {
+            pParent = pNode;
+            pNode = pNode -> pLeft;
+        }
+        else if (value > pNode -> value)
+        {
+            pParent = pNode;
+            pNode = pNode -> pRight;
+        }
+        else//找到待删除值
+            break;
+    }
+    if(!pNode)//没有找到
+        return false;
+    if(! pNode -> pLeft && !pNode -> pRight)
+        deleteChildless(pParent, pNode);
+    else if (!pNode -> pLeft || !pNode -> pRight)
+        deleteSingleSon(pParent, pNode);
+    else
+    {
+        MYTreeNode *pCurr = pNode;//暂存待删除节点
+        pParent = pNode;
+        pNode = pNode -> pLeft;
+        while (pNode -> pRight) {
+            pParent = pNode;
+            pNode = pNode -> pRight;
+        }
+        pCurr -> value = pNode -> value;//删除数据
+        if(!pNode -> pLeft)//左孩子空
+            deleteChildless(pParent, pNode);
+        else
+            deleteSingleSon(pParent, pNode);
+        
+    }
+    return true;
+
+}
 
 
 

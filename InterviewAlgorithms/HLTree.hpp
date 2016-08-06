@@ -46,7 +46,7 @@ private:
     void postOrder(MYTreeNode *pRoot,Visit visit) const;
     void postOrderNot(Visit visit) const;
     //delete
-    void delteChildless(MYTreeNode *pParent,MYTreeNode *pNode);//pNode无子
+    void deleteChildless(MYTreeNode *pParent,MYTreeNode *pNode);//pNode无子
     void deleteSingleSon(MYTreeNode *pParent,MYTreeNode *pNode);//pNode是pParent唯一子节点
     
 public:
