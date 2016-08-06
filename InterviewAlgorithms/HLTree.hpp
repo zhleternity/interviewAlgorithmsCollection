@@ -25,4 +25,36 @@ typedef struct HLTreeNode{
     HLTreeNode(int v) : value(v),pLeft(NULL),pRight(NULL) {}
 }MYTreeNode;
 
+typedef void(*Visit) (int value);
+
+class HLBinaryTree{
+private:
+    MYTreeNode *pRoot;
+    //destroy
+    void destroy(MYTreeNode *pRoot);
+    //insert
+    bool insert(MYTreeNode *&pRoot,int value);//recursion
+    bool insertNot(int value);//non recursion
+    //pre order visit
+    void preOrder(MYTreeNode *pRoot,Visit visit) const;
+    void preOrderNot(Visit visit) const;
+    //middle order visit
+    void middleOrder(MYTreeNode *pRoot,Visit visit) const;
+    void middleOrderNot1(Visit visit) const;
+    void middleOrderNot2(Visit visit) const;
+    //post order visit
+    void postOrder(MYTreeNode *pRoot,Visit visit) const;
+    void postOrderNot(Visit visit) const;
+    //delete
+    void delteChildless(MYTreeNode *pParent,MYTreeNode *pNode);//pNode无子
+    void deleteSingleSon(MYTreeNode *pParent,MYTreeNode *pNode);//pNode是pParent唯一子节点
+    
+public:
+    HLBinaryTree();
+    ~ HLBinaryTree();
+    bool Insert(int value);
+    bool Delete(int value);
+    
+};
+
 #endif /* HLTree_hpp */
