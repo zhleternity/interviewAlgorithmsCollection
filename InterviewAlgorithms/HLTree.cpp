@@ -237,8 +237,19 @@ void HLBinaryTree::middleOrderNot2(Visit visit)const{
 }
 
 
+//post order visit
+void HLBinaryTree::PostOrder(Visit visit)const{
+    postOrder(pRoot, visit);
+}
 
-
+void HLBinaryTree::postOrder(MYTreeNode *pRoot, Visit visit) const
+{
+    if (pRoot) {
+        postOrder(pRoot->pLeft, visit);
+        postOrder(pRoot->pRight, visit);
+        visit(pRoot->value);
+    }
+}
 
 
 
