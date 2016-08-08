@@ -178,9 +178,19 @@ void HLBinaryTree::preOrderNot(Visit visit)const
     }
 }
 
+//middle order visit
+void HLBinaryTree::MiddleOrder(Visit visit)const
+{
+    middleOrder(pRoot,visit);
+}
 
-
-
+void HLBinaryTree::middleOrder(MYTreeNode *pRoot, Visit visit) const{
+    if (pRoot) {
+        middleOrder(pRoot->pLeft, visit);
+        visit(pRoot->value);
+        middleOrder(pRoot->pRight, visit);
+    }
+}
 
 
 
