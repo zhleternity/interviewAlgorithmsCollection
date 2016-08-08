@@ -9,6 +9,7 @@
 #include <iostream>
 #include <vector>
 #include "interviewAlg.hpp"
+#include "HLTree.hpp"
 
 using namespace std;
 
@@ -137,7 +138,15 @@ int main() {
     aa.enumNUmber(en, x, size3, 0, 0, sum);
     delete [] x;
     
-    
+//    const char pPre[] = "GDAFEMHZ";
+//    const char pMiddle[] = "ADEFGHMZ";
+//    int len = sizeof(pMiddle) / sizeof(char);
+//    char *pPost = new char[len];
+//    int idx = 0;
+//    HLBinaryTree hlbt;
+//    hlbt.MiddlePre2Post(pMiddle, pPre, len, pPost, idx);
+//    cout<<"post order :"<<pPost<<endl;
+//    cout<<"idx:"<<idx<<endl;
     
     
     

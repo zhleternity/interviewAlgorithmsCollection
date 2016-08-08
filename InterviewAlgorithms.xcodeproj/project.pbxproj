@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3A29F0F21D55962E00846EEF /* HLTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A29F0F01D55962E00846EEF /* HLTree.cpp */; };
+		3A29F0F51D583E2900846EEF /* interviewAlg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A29F0F31D583E2900846EEF /* interviewAlg.cpp */; };
 		3AE0655A1D475C6F00E6F55F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AE065591D475C6F00E6F55F /* main.cpp */; };
-		3AE065621D475CB100E6F55F /* interviewAlg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AE065601D475CB100E6F55F /* interviewAlg.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,10 +27,10 @@
 /* Begin PBXFileReference section */
 		3A29F0F01D55962E00846EEF /* HLTree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HLTree.cpp; sourceTree = "<group>"; };
 		3A29F0F11D55962E00846EEF /* HLTree.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HLTree.hpp; sourceTree = "<group>"; };
+		3A29F0F31D583E2900846EEF /* interviewAlg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = interviewAlg.cpp; sourceTree = "<group>"; };
+		3A29F0F41D583E2900846EEF /* interviewAlg.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = interviewAlg.hpp; sourceTree = "<group>"; };
 		3AE065561D475C6F00E6F55F /* InterviewAlgorithms */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = InterviewAlgorithms; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AE065591D475C6F00E6F55F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		3AE065601D475CB100E6F55F /* interviewAlg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = interviewAlg.cpp; sourceTree = "<group>"; };
-		3AE065611D475CB100E6F55F /* interviewAlg.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = interviewAlg.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,9 +63,9 @@
 		3AE065581D475C6F00E6F55F /* InterviewAlgorithms */ = {
 			isa = PBXGroup;
 			children = (
+				3A29F0F31D583E2900846EEF /* interviewAlg.cpp */,
+				3A29F0F41D583E2900846EEF /* interviewAlg.hpp */,
 				3AE065591D475C6F00E6F55F /* main.cpp */,
-				3AE065601D475CB100E6F55F /* interviewAlg.cpp */,
-				3AE065611D475CB100E6F55F /* interviewAlg.hpp */,
 				3A29F0F01D55962E00846EEF /* HLTree.cpp */,
 				3A29F0F11D55962E00846EEF /* HLTree.hpp */,
 			);
@@ -128,8 +128,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A29F0F51D583E2900846EEF /* interviewAlg.cpp in Sources */,
 				3A29F0F21D55962E00846EEF /* HLTree.cpp in Sources */,
-				3AE065621D475CB100E6F55F /* interviewAlg.cpp in Sources */,
 				3AE0655A1D475C6F00E6F55F /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
