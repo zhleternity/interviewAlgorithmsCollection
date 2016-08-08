@@ -192,9 +192,25 @@ void HLBinaryTree::middleOrder(MYTreeNode *pRoot, Visit visit) const{
     }
 }
 
+void HLBinaryTree::middleOrderNot1(Visit visit)const{
+    stack<MYTreeNode *> s;
+    MYTreeNode *pCurr = pRoot;
+    while (pCurr || !s.empty()) {
+        while (pCurr) {//找最左孩子
+            s.push(pCurr -> pLeft);
+            pCurr = pCurr -> pLeft;
+        }
+        
+        if (! s.empty()) {
+            pCurr = s.top();//访问左孩子为空的节点
+            s.pop();
+            visit(pCurr -> value);
+            pCurr = pCurr -> pRight;//转向右孩子
+        }
+    }
+}
 
-
-
+void 
 
 
 
