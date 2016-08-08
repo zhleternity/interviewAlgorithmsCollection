@@ -59,6 +59,7 @@ public:
     void PreOrder(Visit visit) const;
     void MiddleOrder(Visit visit) const;
     void PostOrder(Visit visit) const;
+    void MiddlePre2Post(const char *pMiddle,const char *pPre,int length,char *pPost,int &idx);
     
 };
 

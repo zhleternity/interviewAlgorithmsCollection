@@ -275,7 +275,14 @@ void HLBinaryTree::postOrderNot(Visit visit)const{
     }
 }
 
-
+//given the middle and pre order , solve the post order
+void HLBinaryTree::MiddlePre2Post(const char *pMiddle, const char *pPre, int length, char *pPost, int &idx){
+    if(length <= 0)
+        return ;
+    if (1 == length) {
+        pPost[idx] = *
+    }
+}
 
 
 
