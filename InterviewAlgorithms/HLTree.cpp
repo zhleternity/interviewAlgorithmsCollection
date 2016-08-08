@@ -280,8 +280,22 @@ void HLBinaryTree::MiddlePre2Post(const char *pMiddle, const char *pPre, int len
     if(length <= 0)
         return ;
     if (1 == length) {
-        pPost[idx] = *
+        pPost[idx] = *pPre;
+        idx ++;
+        return;
     }
+    
+    char root = *pPre;
+    int nRoot = 0;
+    for (; nRoot < length; nRoot ++) {
+        if(pMiddle[nRoot] == root)
+            break;
+    }
+    
+    MiddlePre2Post(pMiddle, pPre + 1, nRoot, pPost, idx);
+    MiddlePre2Post(pMiddle + nRoot + 1, pPre + nRoot + 1, length - nRoot - 1, pPost, idx);
+    pPost[idx] = root;
+    idx ++;
 }
 
 
