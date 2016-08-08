@@ -210,7 +210,31 @@ void HLBinaryTree::middleOrderNot1(Visit visit)const{
     }
 }
 
-void 
+void HLBinaryTree::middleOrderNot2(Visit visit)const{
+    if(!pRoot)
+        return;
+    stack<pair<MYTreeNode *, int>> s;
+    s.push(make_pair(pRoot, 0));
+    int times;
+    MYTreeNode *pCurr;
+    
+    while (!s.empty()) {
+        pCurr = s.top().first;
+        times = s.top().second;
+        s.pop();
+        if (! times) {//第一次压栈
+            if(pCurr ->pRight)
+                s.push(make_pair(pCurr->pRight, 0));
+            s.push(make_pair(pCurr, 1));//第二次压栈
+            if (pCurr -> pLeft)
+                s.push(make_pair(pCurr->pLeft, 0));
+                
+                
+        }
+        else
+            visit(pCurr -> value);
+    }
+}
 
 
 
