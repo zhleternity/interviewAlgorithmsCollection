@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "5B9419CE20174532CD76FDEDA17667629C60F88C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "5B9419CE20174532CD76FDEDA17667629C60F88C" : 0,
+    "948F5A9B2C82CD15057623AEA664329AE82693B7" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "9DCDB1FF-3E02-44BF-9C73-78EAEBE5F14A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "5B9419CE20174532CD76FDEDA17667629C60F88C" : "InterviewAlgorithms\/",
+    "948F5A9B2C82CD15057623AEA664329AE82693B7" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "InterviewAlgorithms",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "InterviewAlgorithms.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:zhleternity\/interviewAlgorithmsDemo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5B9419CE20174532CD76FDEDA17667629C60F88C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:beautifulreading\/ling.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "948F5A9B2C82CD15057623AEA664329AE82693B7"
+    }
+  ]
+}
