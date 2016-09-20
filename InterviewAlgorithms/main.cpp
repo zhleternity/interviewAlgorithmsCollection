@@ -156,7 +156,7 @@ int main() {
     int residue;
     aa.findNumber(fn, x_fn, 0, sum_fn, 0, residue);
     cout<<residue<<endl;
-    delete [] x;
+    delete [] x_fn;
     
 //    char pPost[] = "AEFDHZMG";
 //    char pMiddle[] = "ADEFGHMZ";

@@ -340,7 +340,9 @@ bool HLBinaryTree::canPostOrder(const int *a, int size){
             break;
         n_right --;
     }
-    
+    if(n_right != n_left - 1)
+        return false;//can not partion into two sections by root
+    return canPostOrder(a, n_left) && canPostOrder(a + n_left, size - n_left + 1);
     
 }
 
