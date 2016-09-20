@@ -321,7 +321,28 @@ void HLBinaryTree::MiddlePost2Pre(const char *pMiddle, const char *pPost, int le
     MiddlePost2Pre(pMiddle+nRoot+1, pPost+nRoot, length -(nRoot+1), pPre, idx);
 }
 
-
+//determine whether can post order visit
+bool HLBinaryTree::canPostOrder(const int *a, int size){
+    if(size <= 1)
+        return true;
+    
+    int root = a[size-1];
+    int n_left = 0;
+    while (n_left < size - 1) {
+        if(a[n_left] > root)
+            break;
+        n_left ++;
+    }
+    
+    int n_right = size - 2;//size-1 is root
+    while (n_right >= 0) {
+        if(a[n_right] < root)
+            break;
+        n_right --;
+    }
+    
+    
+}
 
 
 
