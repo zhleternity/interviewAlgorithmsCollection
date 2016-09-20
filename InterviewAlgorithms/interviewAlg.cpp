@@ -909,3 +909,13 @@ void AllAlgorithms::enumNUmber(int *a,bool *res, int size,int k, int sumCurr,int
     enumNUmber(a, res, size, k+1, sumCurr , sum);
 }
 
+//分支限界法
+void AllAlgorithms::findNumber(int *a, bool *x, int i, int sum, int has, int residue){
+    int size = sizeof(a) / sizeof(int);
+    x = new bool[size];
+    if(i >= size)
+        return;
+    if (has + a[i] == sum) {
+        x[i] = true;
+    }
+}
