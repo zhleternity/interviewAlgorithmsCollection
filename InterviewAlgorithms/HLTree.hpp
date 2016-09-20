@@ -65,4 +65,23 @@ public:
     
 };
 
+
+
+template <typename T>
+
+class BalanceTreeNode{
+public:
+    T value;
+    int balance_factor;
+    int eatra_data; //
+    BalanceTreeNode<T>* leftChild;
+    BalanceTreeNode<T>* rightChild;
+    
+    BalanceTreeNode(const T& value);
+    BalanceTreeNode();
+    int getHeight() const;
+    const T& getLeftChild() const;
+    const T& getRightChild() const;
+};
+
 #endif /* HLTree_hpp */
