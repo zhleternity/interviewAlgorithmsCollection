@@ -298,6 +298,28 @@ void HLBinaryTree::MiddlePre2Post(const char *pMiddle, const char *pPre, int len
     idx ++;
 }
 
+//givern the middle and post order, solve the pre order.
+void HLBinaryTree::MiddlePost2Pre(const char *pMiddle, const char *pPost, int length, char *pPre, int &idx){
+    if(length <= 0)
+        return ;
+    if (1 == length) {
+        pPre[idx] = *pPost;
+        idx ++;
+        return;
+    }
+    
+    char root = pPost[length + 1];
+    pPre[idx] = root;
+    idx ++;
+    int nRoot = 0;
+    for (; nRoot < length; nRoot ++) {
+        if(pMiddle[nRoot] == root)
+            break;
+    }
+    
+    MiddlePost2Pre(pMiddle, pPost, nRoot, pPre, idx);
+    MiddlePost2Pre(pMiddle+nRoot+1, pPost+nRoot, length -(nRoot+1), pPre, idx);
+}
 
 
 

@@ -158,6 +158,16 @@ int main() {
     cout<<residue<<endl;
     delete [] x;
     
+    char pPost[] = "AEFDHZMG";
+    char pMiddle[] = "ADEFGHMZ";
+    int size4 = sizeof(pMiddle) / sizeof(char);
+    char *pPre = new char[size4];
+    int idx = 0;
+    HLBinaryTree hlbt;
+    hlbt.MiddlePost2Pre(pMiddle, pPost, size4-1, pPre, idx);
+    pPre[size4 - 1] = 0;
+    cout<<pPre<<endl;
+    delete [] pPre;
     
     
     
