@@ -63,6 +63,7 @@ public:
     void cantorExpansion(const int *a,int *b,int size);
     void enumNUmber(int *a,bool *res,int size,int k,int sumCurr,int sum);
     void findNumber(int *a, bool *x, int i, int sum, int has, int residue);
+    void findNumber(int *a, bool *x, int i, int sum, int has, int negative, int positive);
     
     
     

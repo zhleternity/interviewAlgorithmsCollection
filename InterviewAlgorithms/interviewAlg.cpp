@@ -934,6 +934,40 @@ void AllAlgorithms::findNumber(int *a, bool *x, int i, int sum, int has, int res
     }
 }
 
+//whne include negative number
+//residue means the sum of all the positive number
+void AllAlgorithms::findNumber(int *a, bool *x, int i, int sum, int has, int negative, int positive){
+    int size = sizeof(a) / sizeof(int);
+    if(i >= size)
+        return;
+    if (has + a[i] == sum) {
+        x[i] = true;
+        x[i] = false;
+    }
+    if (a[i] >= 0){
+        if ((has + positive >= sum) && (has + a[i]) <= sum) {
+            x[i] = true;
+            findNumber(a, x, i+1, sum, has+a[i], negative, positive - a[i]);
+            x[i] = false;
+        }
+        
+        if (has + positive - a[i] >= sum) {
+            x[i] = false;
+            findNumber(a, x, i+1, sum, has, negative, positive-a[i]);
+        }
+    }
+    else{
+        if (has + x[i]+ positive >= sum) {
+            x[i] = true;
+            findNumber(a, x, i+1, sum, has+a[i], negative-a[i], positive);
+            x[i] = false;
+        }
+        if ((has + negative <= sum) && (has + positive >= sum)) {
+            x[i] = false;
+            findNumber(a, x, i+1, sum, has, negative-a[i], positive);
+        }
+    }
+}
 
 
 
