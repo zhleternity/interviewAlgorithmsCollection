@@ -148,6 +148,15 @@ int main() {
 //    cout<<"post order :"<<pPost<<endl;
 //    cout<<"idx:"<<idx<<endl;
     
+    int fn[] = {1,2,3,4,5,6,7,8,9,10};
+    int siz = sizeof(fn) / sizeof(int);
+    bool *x_fn = new bool[siz];
+    memset(x_fn, 0, size);
+    int sum_fn = 40;
+    int residue;
+    aa.findNumber(fn, x_fn, 0, sum_fn, 0, residue);
+    cout<<residue<<endl;
+    delete [] x;
     
     
     

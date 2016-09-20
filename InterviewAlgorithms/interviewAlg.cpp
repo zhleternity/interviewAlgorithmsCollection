@@ -910,12 +910,51 @@ void AllAlgorithms::enumNUmber(int *a,bool *res, int size,int k, int sumCurr,int
 }
 
 //分支限界法
+
+//x[]为最终解，i为考察第x[i]是否加入，has表示当前的和，residue表示剩余数的全部和
 void AllAlgorithms::findNumber(int *a, bool *x, int i, int sum, int has, int residue){
     int size = sizeof(a) / sizeof(int);
-    x = new bool[size];
+//    x = new bool[size];
+//    memset(x, 0, size);
     if(i >= size)
         return;
     if (has + a[i] == sum) {
         x[i] = true;
+        x[i] = false;
+    }
+    else if ( (has + residue) >= sum && (has + a[i]) <= sum)
+    {
+        x[i] = true;
+        findNumber(a, x, i+1, sum, has+a[i], residue-a[i]);
+    }
+    
+    if ((has + residue - a[i]) >= sum) {
+        x[i] = false;
+        findNumber(a, x, i+1, sum, has, residue-a[i]);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
