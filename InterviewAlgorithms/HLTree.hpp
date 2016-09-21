@@ -84,4 +84,58 @@ public:
     const T& getRightChild() const;
 };
 
+
+
+//AVL
+template <typename T>
+class cBalanceTree{
+private:
+    bool m_bBinaryTree;//ordinary binary tree
+    BalanceTreeNode<T>* m_pRoot;
+    BalanceTreeNode<T>* m_pInsert;//currented inserted node
+    int m_iNodeSize;//number of node
+    bool m_bAllInsert;//if true,it means:if there are values when inserting,then renew it
+    
+    bool m_bFastMode;
+    BalanceTreeNode<T>* m_pAllNode;
+    int m_nNodeUsed;//the node used
+    
+public:
+    cBalanceTree();
+    ~ cBalanceTree();
+    void setAllInsert(bool bInsert);
+    bool isAllInsert() const;
+    void setBinaryTree(bool bBinary);//set as an ordinary tree
+    bool isBinaryTree() const;
+    void Init();
+    void Clear() const;//delete the whole tree
+    
+    bool Insert(const T& value);
+    BalanceTreeNode<T>* getInsert();
+    bool Delete(const T& value);
+    bool Delete();
+    
+    
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #endif /* HLTree_hpp */
