@@ -173,7 +173,9 @@ int main() {
     aa.mergeSort(merge, 0, size5-1);
     aa._print(merge, size5);
     
-    
+    int count = 0;
+    aa.mergeSortInversionNumber(merge, 0, size-1, count);
+    cout<<count<<endl;
     
     
     return 0;

@@ -991,6 +991,7 @@ void AllAlgorithms::merge(int *a, int low, int middle, int high){
     
     for(i = 0; i < size; i ++)
         a[low + i] = temp[i];
+    
 
 }
 
@@ -1008,9 +1009,41 @@ void AllAlgorithms::mergeSort(int *a, int low, int high){
 
 //external sorting
 
+//inversion number
+void AllAlgorithms::mergeInversionNumber(int *a, int low, int middle, int high, int &count){
+    int temp[100];
+    int i = low;
+    int j = middle + 1;
+    int size = 0;
+    for (; (i <= middle) && (j <= high); size ++) {
+        if(a[i ] < a[j])
+            temp[size] = a[i ++];
+        else{
+            count = count + (middle - i + 1);
+            temp[size] = a[j ++];
+        }
+            
+    }
+    
+    while(i <= middle)
+        temp[size ++] = a[i ++];
+    while(j <= high)
+        temp[size ++] = a[j ++];
+    
+    for (i = 0; i < size; i ++) {
+        a[low + i] = temp[i];
+    }
+    
+}
 
-
-
+void AllAlgorithms::mergeSortInversionNumber(int *a, int low, int high, int &count){
+    if(low >= high)
+        return;
+    int middle = (low + high) / 2;
+    mergeSortInversionNumber(a, low, middle, count);
+    mergeSortInversionNumber(a, middle+1, high, count);
+    mergeInversionNumber(a, low, middle, high, count);
+}
 
 
 
