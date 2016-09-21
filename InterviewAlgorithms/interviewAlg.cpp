@@ -1004,8 +1004,9 @@ void AllAlgorithms::mergeSort(int *a, int low, int high){
     merge(a, low, middle, high);
 }
 
+//Mind it: if the length of array is short, do not choose merge sort to do,instead others,eg. insertion sort
 
-
+//external sorting
 
 
 
