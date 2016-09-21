@@ -84,6 +84,17 @@ public:
 };
 
 
+template <typename T>
+class TreeNode {
+    TreeNode<T>* lson;
+    TreeNode<T>* rson;
+    int hight;
+    
+public:
+    int height(TreeNode<T>* son);
+//    int min(int a, int b);
+//    int max(int a, int b);
+};
 
 //AVL
 template <typename T>
@@ -127,7 +138,8 @@ public:
     //fast mode
     void setFastMode(bool bFast, int nInitMode);
     bool isFastMode() const;
-    
+    void singRorateLeft(TreeNode<T>* &k2);
+    void singRorateRight(TreeNode<T>* &k2);
     
 };
 

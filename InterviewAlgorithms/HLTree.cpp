@@ -347,10 +347,17 @@ bool HLBinaryTree::canPostOrder(const int *a, int size){
 }
 
 
+//平衡二叉树*********************************
+//*****************************************
+
 //左左情况下的旋转
 template <typename T>
-void cBalanceTree<T>::singRorateLeft(BalanceTreeNode<T>* &k2) {
-    <#statements#>
+void cBalanceTree<T>::singRorateLeft(TreeNode<T>* &k2) {
+    TreeNode<T>* k1;
+    k1 = k2 -> lson;
+    k2 -> lson = k1 -> rson;
+    k1 -> rson = k2;
+//    k2 -> hight = 
 }
 
 
