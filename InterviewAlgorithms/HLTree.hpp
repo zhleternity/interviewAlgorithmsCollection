@@ -68,7 +68,6 @@ public:
 
 
 template <typename T>
-
 class BalanceTreeNode{
 public:
     T value;
@@ -125,7 +124,9 @@ public:
     bool isEmpty() const;//if node size is 0
     bool Swap(T t1, T t2);//swap
     
-    
+    //fast mode
+    void setFastMode(bool bFast, int nInitMode);
+    bool isFastMode() const;
     
     
 };

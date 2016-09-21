@@ -347,5 +347,11 @@ bool HLBinaryTree::canPostOrder(const int *a, int size){
 }
 
 
+//左左情况下的旋转
+template <typename T>
+void cBalanceTree<T>::singRorateLeft(BalanceTreeNode<T>* &k2) {
+    <#statements#>
+}
+
 
 
