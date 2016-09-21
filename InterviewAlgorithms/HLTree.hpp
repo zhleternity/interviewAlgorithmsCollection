@@ -113,7 +113,19 @@ public:
     bool Insert(const T& value);
     BalanceTreeNode<T>* getInsert();
     bool Delete(const T& value);
-    bool Delete();
+//    bool Delete();
+    bool getValue(T& value) const;
+    bool Search(const T& value) const;
+    bool Search(const T& value, BalanceTreeNode<T>*& pNode) const;
+    const T& Min() const;
+//    void MiddleOrder(FUNC func, void* IpParam) const;
+//    void PreOrder(FUNC func , void* IpParam) const;
+//    
+    int getNodeSize() const;//get size of node
+    bool isEmpty() const;//if node size is 0
+    bool Swap(T t1, T t2);//swap
+    
+    
     
     
 };
