@@ -67,6 +67,7 @@ public:
     void merge(int *a, int low, int middle, int high);
     void mergeSort(int *a, int low, int high);
     void mergeInversionNumber(int *a, int low, int middle, int high, int& count);
+    void mergeInversionNumber2(int *a, int low, int middle, int high, int& count);
     void mergeSortInversionNumber(int *a, int low, int high, int& count);
     
     
