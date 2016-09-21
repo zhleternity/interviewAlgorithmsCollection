@@ -994,7 +994,15 @@ void AllAlgorithms::merge(int *a, int low, int middle, int high){
 
 }
 
-
+void AllAlgorithms::mergeSort(int *a, int low, int high){
+    if(low >= high)
+        return;
+    
+    int middle = (low + high) / 2;
+    mergeSort(a, low, middle);
+    mergeSort(a, middle + 1, high);
+    merge(a, low, middle, high);
+}
 
 
 
