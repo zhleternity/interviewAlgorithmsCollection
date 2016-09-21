@@ -1069,11 +1069,48 @@ void AllAlgorithms::mergeSortInversionNumber(int *a, int low, int high, int &cou
 }
 
 
+//给定M×N的二维数组,每一行、每一列都是有序的,则该二维数组称为杨氏矩阵
+//Young Matrix
 
+YoungMatrix::YoungMatrix(int row, int col){
+    Init(row, col);
+}
 
+YoungMatrix::~ YoungMatrix(){
+    destroyY();
+}
 
+bool YoungMatrix::insertY(int x){
+    int row = m_nRow - 1;
+    int col = m_nCol - 1;
+    if(m_pData[row][col] < INFINITY)//It means the young matrix is full
+        return false;
+    m_pData[row][col] = x;
+    int r = row;
+    int c = col;
+    while ((row >= 0) || (col >= 0)) {
+        if ((row >= 1) && (m_pData[row-1][col] > m_pData[r][c])) {
+            r = row - 1;
+            c = col;
+        }
+        if ((col >= 1) && (m_pData[row][col-1] > m_pData[r][c])) {
+            r = row;
+            c = col - 1;
+        }
+        if((r == row) && (c == col))
+            break;
+        swap(m_pData[row][col], m_pData[r][c]);
+        row = r;
+        col = c;
+    }
+    return true;
+}
 
-
+bool YoungMatrix::isBig(int a, int b){
+    if(0 == rand() % 2 )
+        return a >= b;
+    return a > b;
+}
 
 
 

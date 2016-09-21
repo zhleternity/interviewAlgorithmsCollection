@@ -14,6 +14,9 @@
 #include <stdlib.h>
 #include <vector>
 
+
+#define INFINITY 100000
+
 using namespace std;
 
 class AllAlgorithms{
@@ -117,6 +120,30 @@ typedef struct tagSBucket{
         }
     }
 }sBucket;
+
+class YoungMatrix{
+private:
+    int m_nRow;
+    int m_nCol;
+    int **m_pData;
+    
+public:
+    YoungMatrix(int row, int col);
+    ~ YoungMatrix();
+    
+    void Init(int row, int col);
+    void destroyY();
+    bool insertY(int x);
+    bool insertY2(int x);
+    void deleteY(int row, int col);
+    bool findY(int x, int &row, int &col) const;
+    void printY() const;
+    bool isBig(int a, int b);
+};
+
+
+
+
 
 
 #endif /* interviewAlg_hpp */
