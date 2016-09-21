@@ -168,7 +168,10 @@ int main() {
 //    pPre[size4 - 1] = 0;
 //    cout<<pPre<<endl;
 //    delete [] pPre;
-    
+    int merge[] = {3,56,2, 7,45, 8, 1};
+    int size5 = sizeof(merge) / sizeof(int);
+    aa.mergeSort(merge, 0, size5-1);
+    aa._print(merge, size5);
     
     
     
