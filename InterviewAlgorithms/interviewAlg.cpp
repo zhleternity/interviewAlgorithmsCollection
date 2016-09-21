@@ -969,7 +969,30 @@ void AllAlgorithms::findNumber(int *a, bool *x, int i, int sum, int has, int neg
     }
 }
 
+//merge sort
+void AllAlgorithms::merge(int *a, int low, int middle, int high){
+    int temp[100];
+    int i = low;
+    int j = middle + 1;
+    int size = 0;
+    for (; (i <= middle) && (j <= high); size ++) {
+        if(a[i] < a[j])
+            temp[size] = a[i ++];
+        else
+            temp[size] = a[j ++];
+    }
+    
+    while (i <= middle) {
+        temp[size ++] = a[i ++];
+    }
+    while (j <= high) {
+        temp[size ++] = a[j ++];
+    }
+    
+    for(i = 0; i < size; i ++)
+        a[low + i] = temp[i];
 
+}
 
 
 
