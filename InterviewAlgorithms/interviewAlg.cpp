@@ -1140,7 +1140,19 @@ bool YoungMatrix::insertY2(int x){
     
 }
 
-
+bool YoungMatrix::findY(int x, int &row, int &col) const{
+    row = 0;
+    col = m_nCol - 1;
+    while (row < m_nRow && col >= 0) {
+        if(m_pData[row][col] == x)
+            return true;
+        if(x > m_pData[row][col])
+            row ++;
+        else
+            col --;
+    }
+    return false;
+}
 
 
 
