@@ -1114,6 +1114,21 @@ bool YoungMatrix::isBig(int a, int b){
 
 bool YoungMatrix::insertY2(int x){
     int row = m_nRow - 1;
+    int col = m_nCol - 1;
+    if(m_pData[row][col] < INFINITY)
+        return false;
+    m_pData[row][col] = x;
+    int r = row;
+    int c = col;
+    while (row >= 0 || col >= 0) {
+        if(row >= 1 && m_pData[row-1][col] > m_pData[r][c]){
+            r = row - 1;
+            c = col;
+        }
+        if (col >= 1 && ) {
+            <#statements#>
+        }
+    }
     
 }
 
