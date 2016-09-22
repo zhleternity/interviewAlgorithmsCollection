@@ -1197,5 +1197,29 @@ void AllAlgorithms::ganttChart(const int *a, const int *b, int *c, int size){
     
     sort(item, item + size2);
     
-    bool *
+    bool *bArrage = new bool[size];//第i号已经安排
+    for (int i = 0; i < size; i ++) {
+        bArrage[i] = false;
+    }
+    
+    int from = 0;
+    int to = size - 1;
+    for (int i = 0; i < size2; i ++) {
+        if(bArrage[item[i].idx])//item[i].idx已经确定
+            continue;
+        bArrage[item[i].idx] = true;
+        if (item[i].first) {
+            c[from] = item[i].idx;
+            from ++;
+        }
+        else{
+            c[to] = item[i].idx;
+            to --;
+            
+        }
+        if(to - from < 0)//提前退出
+            break;
+    }
+    delete [] item;
+    delete [] bArrage;
 }
