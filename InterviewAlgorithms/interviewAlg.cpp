@@ -1125,10 +1125,18 @@ bool YoungMatrix::insertY2(int x){
             r = row - 1;
             c = col;
         }
-        if (col >= 1 && ) {
-            <#statements#>
+        if (col >= 1 && isBig(m_pData[row][col-1], m_pData[r][c])) {
+            r = row;
+            c = col - 1;
         }
+        
+        if(r == row && c == col)
+            break;
+        swap(m_pData[row][col], m_pData[r][c]);
+        row = r;
+        col = c;
     }
+    return true;
     
 }
 
