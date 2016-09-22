@@ -1112,6 +1112,7 @@ bool YoungMatrix::isBig(int a, int b){
     return a > b;
 }
 
+//insertion
 bool YoungMatrix::insertY2(int x){
     int row = m_nRow - 1;
     int col = m_nCol - 1;
@@ -1140,6 +1141,7 @@ bool YoungMatrix::insertY2(int x){
     
 }
 
+//find
 bool YoungMatrix::findY(int x, int &row, int &col) const{
     row = 0;
     col = m_nCol - 1;
@@ -1154,5 +1156,29 @@ bool YoungMatrix::findY(int x, int &row, int &col) const{
     return false;
 }
 
-
+//delete
+void YoungMatrix::deleteY(int row, int col){
+    int r = row;
+    int c = col;
+    while (row < m_nRow && col < m_nCol) {
+        if(m_pData[row][col] == INFINITY)
+            break;
+        if(row + 1 < m_nRow){
+            r = row + 1;
+            c = col;
+        }
+        
+        if (col + 1 < m_nCol && m_pData[row][col+1] < m_pData[r][c]) {
+            r = row;
+            c = col + 1;
+        }
+        if(row == r && col == c)
+            break;
+        m_pData[row][col] = m_pData[r][c];
+        row = r;
+        col = c;
+    }
+    
+    m_pData[m_nRow-1][m_nCol-1] = INFINITY;
+}
 
