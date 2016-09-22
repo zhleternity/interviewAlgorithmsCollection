@@ -1182,3 +1182,20 @@ void YoungMatrix::deleteY(int row, int col){
     m_pData[m_nRow-1][m_nCol-1] = INFINITY;
 }
 
+void AllAlgorithms::ganttChart(const int *a, const int *b, int *c, int size){
+    int size2 = size * 2;
+    //整理数据
+    HLItem *item = new HLItem[size2];
+    for (int i = 0; i < size2; i ++) {
+        item[i].t = a[i];
+        item[i].idx = i;
+        item[i].first = true;
+        item[i + size].t = b[i];
+        item[size + i].idx = i;
+        item[size + i].first = false;
+    }
+    
+    sort(item, item + size2);
+    
+    bool *
+}

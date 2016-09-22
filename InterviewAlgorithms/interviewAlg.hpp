@@ -72,6 +72,7 @@ public:
     void mergeInversionNumber(int *a, int low, int middle, int high, int& count);
     void mergeInversionNumber2(int *a, int low, int middle, int high, int& count);
     void mergeSortInversionNumber(int *a, int low, int high, int& count);
+    void ganttChart(const int *a, const int *b, int *c, int size);
     
     
     
@@ -143,6 +144,15 @@ public:
 
 
 
+typedef struct tagItem{
+    int t;
+    int idx;
+    bool first;
+    bool operator < (struct tagItem& item) const{
+        return t < item.t;
+    }
+    
+}HLItem;
 
 
 
