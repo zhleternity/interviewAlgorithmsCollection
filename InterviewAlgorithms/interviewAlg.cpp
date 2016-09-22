@@ -1112,6 +1112,10 @@ bool YoungMatrix::isBig(int a, int b){
     return a > b;
 }
 
+bool YoungMatrix::insertY2(int x){
+    int row = m_nRow - 1;
+    
+}
 
 
 
