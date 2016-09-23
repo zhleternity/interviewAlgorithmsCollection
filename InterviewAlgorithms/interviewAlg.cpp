@@ -1244,16 +1244,17 @@ bool AllAlgorithms::findTwoNumberEqualToSum(int *array, int size, int sum, int &
     
     while (begin < end) {
         curr = array[begin] + array[end];
-        if(curr > sum)
-            end --;
-        else if (curr < sum)
-            begin ++;
-        else{
+        if (curr == sum) {
             find = true;
             a = array[begin];
             b = array[end];
             break;
         }
+        else if (curr > sum)
+            end --;
+        else if (curr < sum)
+            begin ++;
+        
     }
     return find;
 }
