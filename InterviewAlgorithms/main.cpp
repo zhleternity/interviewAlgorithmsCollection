@@ -184,7 +184,8 @@ int main() {
 //    aa.ganttChart(gantt_a, gantt_b, gantt_c, size6);
 //    aa._print(gantt_c, size6);
 //    delete [] gantt_c;
-    
+    int number1,number2;
+    aa.findTwoNumberEqualToSum(merge, size5, 63, number1, number2)
     
     return 0;
 }

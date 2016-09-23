@@ -1233,6 +1233,7 @@ void YoungMatrix::deleteY(int row, int col){
 //    delete [] bArrage;
 //}
 
+//时间复杂度O(nlogn)
 bool AllAlgorithms::findTwoNumberEqualToSum(int *array, int size, int sum, int &a, int &b){
     sort(array, array + size);
     
