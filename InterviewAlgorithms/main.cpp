@@ -185,7 +185,7 @@ int main() {
 //    aa._print(gantt_c, size6);
 //    delete [] gantt_c;
     int number1,number2;
-    bool flag = aa.findTwoNumberEqualToSum(merge, size5, 9, number1, number2);
+    bool flag = aa.findTwoNumberEqualToSum(merge, size5, 47, number1, number2);
     cout<<number1<<","<<number2<<endl;
     cout<<flag<<endl;
     
