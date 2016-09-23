@@ -1080,7 +1080,14 @@ YoungMatrix::~ YoungMatrix(){
     destroyY();
 }
 
+void YoungMatrix::Init(int row, int col){
+    m_nRow = row;
+    m_nCol = col;
+}
 
+void YoungMatrix::destroyY(){
+    delete [] m_pData;
+}
 
 bool YoungMatrix::insertY(int x){
     int row = m_nRow - 1;
