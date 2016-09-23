@@ -1232,3 +1232,27 @@ void YoungMatrix::deleteY(int row, int col){
 //    delete [] item;
 //    delete [] bArrage;
 //}
+
+bool AllAlgorithms::findTwoNumberEqualToSum(int *array, int size, int sum, int &a, int &b){
+    sort(array, array + size);
+    
+    int begin = 0;
+    int end = size - 1;
+    int curr;
+    bool find = false;
+    
+    while (begin < end) {
+        curr = array[begin] + array[end];
+        if(curr > sum)
+            end --;
+        else if (curr < sum)
+            begin ++;
+        else{
+            find = true;
+            a = array[begin];
+            b = array[end];
+            break;
+        }
+    }
+    return find;
+}

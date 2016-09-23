@@ -73,7 +73,7 @@ public:
     void mergeInversionNumber2(int *a, int low, int middle, int high, int& count);
     void mergeSortInversionNumber(int *a, int low, int high, int& count);
     void ganttChart(const int *a, const int *b, int *c, int size);
-    
+    bool findTwoNumberEqualToSum(int *array, int size, int sum, int &a, int &b);
     
     
     
