@@ -1080,6 +1080,8 @@ YoungMatrix::~ YoungMatrix(){
     destroyY();
 }
 
+
+
 bool YoungMatrix::insertY(int x){
     int row = m_nRow - 1;
     int col = m_nCol - 1;
@@ -1182,44 +1184,44 @@ void YoungMatrix::deleteY(int row, int col){
     m_pData[m_nRow-1][m_nCol-1] = INFINITY;
 }
 
-void AllAlgorithms::ganttChart(const int *a, const int *b, int *c, int size){
-    int size2 = size * 2;
-    //整理数据
-    HLItem *item = new HLItem[size2];
-    for (int i = 0; i < size2; i ++) {
-        item[i].t = a[i];
-        item[i].idx = i;
-        item[i].first = true;
-        item[i + size].t = b[i];
-        item[size + i].idx = i;
-        item[size + i].first = false;
-    }
-    
-    sort(item, item + size2);
-    
-    bool *bArrage = new bool[size];//第i号已经安排
-    for (int i = 0; i < size; i ++) {
-        bArrage[i] = false;
-    }
-    
-    int from = 0;
-    int to = size - 1;
-    for (int i = 0; i < size2; i ++) {
-        if(bArrage[item[i].idx])//item[i].idx已经确定
-            continue;
-        bArrage[item[i].idx] = true;
-        if (item[i].first) {
-            c[from] = item[i].idx;
-            from ++;
-        }
-        else{
-            c[to] = item[i].idx;
-            to --;
-            
-        }
-        if(to - from < 0)//提前退出
-            break;
-    }
-    delete [] item;
-    delete [] bArrage;
-}
+//void AllAlgorithms::ganttChart(const int *a, const int *b, int *c, int size){
+//    int size2 = size * 2;
+//    //整理数据
+//    HLItem *item = new HLItem[size2];
+//    for (int i = 0; i < size2; i ++) {
+//        item[i].t = a[i];
+//        item[i].idx = i;
+//        item[i].first = true;
+//        item[i + size].t = b[i];
+//        item[size + i].idx = i;
+//        item[size + i].first = false;
+//    }
+//    
+//    sort(item, item + size2);
+//    
+//    bool *bArrage = new bool[size];//第i号已经安排
+//    for (int i = 0; i < size; i ++) {
+//        bArrage[i] = false;
+//    }
+//    
+//    int from = 0;
+//    int to = size - 1;
+//    for (int i = 0; i < size2; i ++) {
+//        if(bArrage[item[i].idx])//item[i].idx已经确定
+//            continue;
+//        bArrage[item[i].idx] = true;
+//        if (item[i].first) {
+//            c[from] = item[i].idx;
+//            from ++;
+//        }
+//        else{
+//            c[to] = item[i].idx;
+//            to --;
+//            
+//        }
+//        if(to - from < 0)//提前退出
+//            break;
+//    }
+//    delete [] item;
+//    delete [] bArrage;
+//}
