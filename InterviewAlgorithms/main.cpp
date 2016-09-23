@@ -177,6 +177,14 @@ int main() {
     aa.mergeSortInversionNumber(merge, 0, size-1, count);
     cout<<count<<endl;
     
+    int gantt_a[] = {8,6,2,4};
+    int gantt_b[] = {3,1,3,12};
+    int size6 = sizeof(gantt_a) / sizeof(int);
+    int *gantt_c = new int[size6];
+    aa.ganttChart(gantt_a, gantt_b, gantt_c, size6);
+    aa._print(gantt_c, size6);
+    delete [] gantt_c;
+    
     
     return 0;
 }
