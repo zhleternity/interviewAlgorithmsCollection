@@ -1269,7 +1269,7 @@ void AllAlgorithms::Eratosthenes(bool *a, int n)
     }
     int p = 2;//第一个筛孔
     int j = p * p;
-    int c = 0;
+//    int c = 0;
     while (j <= n) {
         while (j <= n) {
             a[j] = false;
@@ -1297,4 +1297,25 @@ int AllAlgorithms::primeFind(const int *a, int size, int x){
             low = mid + 1;
     }
     return low;
+}
+
+int AllAlgorithms::twoSum(int sum, const int *a, int size){
+    int low = 0;
+    int high = size - 1;
+    int s;
+    int times = 0;
+    
+    while (low < high) {
+        s = a[low] + a[high];
+        if (s == sum) {
+            times ++;
+            low ++;
+            high --;
+        }
+        else if (s > sum)
+            high --;
+        else
+            low ++;
+    }
+    return times;
 }

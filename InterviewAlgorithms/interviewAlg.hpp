@@ -76,6 +76,7 @@ public:
     bool findTwoNumberEqualToSum(int *array, int size, int sum, int &a, int &b);
     void Eratosthenes(bool *a, int n);
     int primeFind(const int *a, int size, int x);
+    int twoSum(int sum, const int *a, int size);
     
     
     
