@@ -1261,4 +1261,24 @@ bool AllAlgorithms::findTwoNumberEqualToSum(int *array, int size, int sum, int &
 
 //定义一个正整数可以被拆分成量素数和的数目为“素和阶数”，试计算100万以内哪个数的素和阶数最大
 //Eratosthenes筛法
-
+void AllAlgorithms::Eratosthenes(bool *a, int n)
+{
+    a[1] = false;//a[0] is not used
+    for (int i = 2; i <= n; i ++) {//Eratosthenes筛法，默认是素数
+        a[i] = true;
+    }
+    int p = 2;//第一个筛孔
+    int j = p * p;
+    int c = 0;
+    while (j <= n) {
+        while (j <= n) {
+            a[j] = false;
+            j += p;
+        }
+        p ++;
+        while (! a[p]) {//查找下一个素数
+            p ++;
+        }
+        j = p * p;
+    }
+}
