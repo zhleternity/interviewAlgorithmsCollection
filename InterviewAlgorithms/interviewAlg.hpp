@@ -77,6 +77,7 @@ public:
     void Eratosthenes(bool *a, int n);
     int primeFind(const int *a, int size, int x);
     int twoSum(int sum, const int *a, int size);
+    void bubbleSort(int *a, int size);
     
     
     
