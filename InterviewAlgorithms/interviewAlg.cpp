@@ -1319,3 +1319,23 @@ int AllAlgorithms::twoSum(int sum, const int *a, int size){
     }
     return times;
 }
+
+void AllAlgorithms::bubbleSort(int *a, int size){
+    int temp;
+    bool bubble;
+    
+    for (int i = 0; i < size - 1; i ++) {
+        bubble = false;
+        for (int j = 0; j < size - i - 1; j ++) {
+            if (a[j] > a[j+1]) {
+                temp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = temp;
+                bubble = true;
+            }
+           
+        }
+        if(!bubble)
+            break;
+    }
+}
