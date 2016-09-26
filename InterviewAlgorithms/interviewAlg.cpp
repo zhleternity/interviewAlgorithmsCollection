@@ -1258,3 +1258,7 @@ bool AllAlgorithms::findTwoNumberEqualToSum(int *array, int size, int sum, int &
     }
     return find;
 }
+
+//定义一个正整数可以被拆分成量素数和的数目为“素和阶数”，试计算100万以内哪个数的素和阶数最大
+//Eratosthenes筛法
+
