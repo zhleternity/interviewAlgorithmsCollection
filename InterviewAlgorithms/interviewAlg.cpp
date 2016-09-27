@@ -1353,3 +1353,21 @@ void AllAlgorithms::bubbleSort(int *a, int size){
 // 若k为右孩子,则k为偶数,则((k+1)/2)-1与(k/2) - 1相等
 // 结论:若待考查结点为k,记k+1为K,则k的父结 点为:(K/2) - 1
 
+//调用钱，n的左右孩子都是大顶堆，调整以n为顶的堆为大顶堆
+void AllAlgorithms::heapAdjust(int *a, int n, int size){
+    int child = 2 * n + 1;//left child
+    int t;
+    while (child < size) {
+        if((child + 1 < size) && (a[child+1] > a[child]))//find bigger one
+            child ++;
+        if (a[child] < a[n])//means that child is less than father,so  it stands for the tune is done
+            break;
+        t = a[child];
+        a[child] = a[n];
+        a[n] = t;
+        
+        n = child;
+        child = 2*n + 1;
+    }
+    
+}
