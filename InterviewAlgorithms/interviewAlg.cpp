@@ -1343,7 +1343,7 @@ void AllAlgorithms::bubbleSort(int *a, int size){
 
 //heap
 //large top heap , and small top heap
-//heap sort
+
 //k的孩子结点是2k+1,2k+2(如果存在)
 // k的父结点:
 // 若k为左孩子,则k的父结点为k/2
@@ -1360,7 +1360,7 @@ void AllAlgorithms::heapAdjust(int *a, int n, int size){
     while (child < size) {
         if((child + 1 < size) && (a[child+1] > a[child]))//find bigger one
             child ++;
-        if (a[child] < a[n])//means that child is less than father,so  it stands for the tune is done
+        if (a[child] < a[n])//means that child is less than father,so  it stands for the adjusting is done
             break;
         t = a[child];
         a[child] = a[n];
@@ -1369,5 +1369,25 @@ void AllAlgorithms::heapAdjust(int *a, int n, int size){
         n = child;
         child = 2*n + 1;
     }
+    
+}
+
+//heap sort,choose the first k bigger one
+void AllAlgorithms::heapSort(int *a, int k, int size){
+    //adjust one by one
+    for (int i = size / 2 - 1  ; i >= 0; i --) {
+        heapAdjust(a, i, size);
+    }
+    int t;
+    int s = size - k;
+    //find the bigest one one by one ,and put at the end of array
+    while (size > s) {
+        t = a[size - 1];
+        a[size - 1] = a[0];
+        a[0] = t;
+        size --;
+        heapAdjust(a, 0, size);
+    }
+    
     
 }

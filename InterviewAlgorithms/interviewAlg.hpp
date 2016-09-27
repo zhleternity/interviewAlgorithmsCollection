@@ -79,6 +79,7 @@ public:
     int twoSum(int sum, const int *a, int size);
     void bubbleSort(int *a, int size);
     void heapAdjust(int *a, int n, int size);
+    void heapSort(int *a, int k, int size);
     
     
     
