@@ -1339,3 +1339,17 @@ void AllAlgorithms::bubbleSort(int *a, int size){
             break;
     }
 }
+
+
+//heap
+//large top heap , and small top heap
+//heap sort
+//k的孩子结点是2k+1,2k+2(如果存在)
+// k的父结点:
+// 若k为左孩子,则k的父结点为k/2
+// 若k为右孩子,则k的父结点为(k/2) - 1
+//二者公式不一样,十分不便。发现:
+// 若k为左孩子,则k为奇数,则((k+1)/2)-1与k/2相等
+// 若k为右孩子,则k为偶数,则((k+1)/2)-1与(k/2) - 1相等
+// 结论:若待考查结点为k,记k+1为K,则k的父结 点为:(K/2) - 1
+
