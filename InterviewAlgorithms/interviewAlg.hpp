@@ -82,6 +82,7 @@ public:
     void heapSort(int *a, int k, int size);
     void _quickSort(int *a, int from ,int to);
     void quickSort(int *a, int size);
+    int patition(int key, int *a, int from ,int to);
     
     
     

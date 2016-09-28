@@ -1391,3 +1391,33 @@ void AllAlgorithms::heapSort(int *a, int k, int size){
     
     
 }
+
+//quick sort
+void AllAlgorithms::_quickSort(int *a, int from, int to){
+    if (to - from <= 10) {
+        bubbleSort(a + from, to - from + 1);
+        return;
+    }
+    
+    
+}
+
+void AllAlgorithms::quickSort(int *a, int size){
+    _quickSort(a, 0, size -1);
+}
+
+int AllAlgorithms::patition(int key, int *a, int from, int to){
+    int t;
+    while (from < to) {
+        while (from < to && a[from] < key) {
+            from ++;
+        }
+        while (from < to && a[to] >= key)
+            to --;
+        
+        t = a[from];
+        a[from] = a[to];
+        a[to] = t;
+    }
+    return from;
+}
