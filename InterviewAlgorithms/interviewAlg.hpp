@@ -80,6 +80,8 @@ public:
     void bubbleSort(int *a, int size);
     void heapAdjust(int *a, int n, int size);
     void heapSort(int *a, int k, int size);
+    void _quickSort(int *a, int from ,int to);
+    void quickSort(int *a, int size);
     
     
     
