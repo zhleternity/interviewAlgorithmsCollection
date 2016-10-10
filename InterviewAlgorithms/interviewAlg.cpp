@@ -1421,3 +1421,22 @@ int AllAlgorithms::patition(int key, int *a, int from, int to){
     }
     return from;
 }
+
+//Longest Increaing Squences
+int AllAlgorithms::getLis2(const int *p, int length){
+    int *longest = new int[length];
+    for (int i = 0; i < length; i ++) {
+        longest[i] = 1;
+    }
+    
+    int n_lis = 1;
+    for (int i = 1; i < length; i ++) {
+        for (int j = 0; j < i; j ++) {
+            if(p[j] <= p[i])
+                longest[i] = max(longest[i], longest[j]+1);
+        }
+        n_lis = max(n_lis, longest[i]);
+    }
+    delete [] longest;
+    return n_lis;
+}
