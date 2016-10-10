@@ -1440,3 +1440,4 @@ int AllAlgorithms::getLis2(const int *p, int length){
     delete [] longest;
     return n_lis;
 }
+
