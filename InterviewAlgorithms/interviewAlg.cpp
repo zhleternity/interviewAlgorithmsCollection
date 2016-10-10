@@ -1441,3 +1441,42 @@ int AllAlgorithms::getLis2(const int *p, int length){
     return n_lis;
 }
 
+void AllAlgorithms::pre_insert(int *a, int &size, int x){
+    if(size <= 0)
+    {
+        a[0] = x;
+        size ++;
+        return;
+    }
+    int low = 0;
+    int high = size - 1;
+    int mid;
+    while (low <= high) {
+        mid = (low + high) / 2;
+        if(x < a[mid])
+            high = mid - 1;
+        else if(x >= a[mid])
+            low = mid + 1;
+    }
+    
+    if (low >= size) {
+        a[size] = x;
+        size ++;
+    }
+    else{
+        if(a[low] < x)
+            a[low+1] = x;
+        else
+            a[low] = x;
+    }
+}
+
+int AllAlgorithms::getLis3(const int *a, int size){
+    int *b = new int[size];
+    int s = 0;
+    for (int i = 0; i < size; i ++) {
+        pre_insert(b, s, a[i]);
+    }
+    delete [] b;
+    return s;
+}
