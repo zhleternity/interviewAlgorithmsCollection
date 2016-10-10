@@ -83,6 +83,7 @@ public:
     void _quickSort(int *a, int from ,int to);
     void quickSort(int *a, int size);
     int patition(int key, int *a, int from ,int to);
+    int getLis2(const int *p, int length);
     
     
     
