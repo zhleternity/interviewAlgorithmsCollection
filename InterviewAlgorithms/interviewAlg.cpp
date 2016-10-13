@@ -1440,7 +1440,7 @@ int AllAlgorithms::getLis2(const int *p, int length){
     delete [] longest;
     return n_lis;
 }
-
+//find prefix
 void AllAlgorithms::pre_insert(int *a, int &size, int x){
     if(size <= 0)
     {
@@ -1470,7 +1470,7 @@ void AllAlgorithms::pre_insert(int *a, int &size, int x){
             a[low] = x;
     }
 }
-
+//LIS
 int AllAlgorithms::getLis3(const int *a, int size){
     int *b = new int[size];
     int s = 0;
