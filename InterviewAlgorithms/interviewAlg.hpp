@@ -16,6 +16,7 @@
 
 
 #define INFINITY 100000
+#define MAXN 200
 
 using namespace std;
 
@@ -89,6 +90,11 @@ public:
     void primeSolve(int arr[], int n);
     void primeSolve2(int arr[], int n);
     void primeSolve3(int arr[], int n);
+    int solve1(int arr[], int n);
+    int solve2(int arr[], int n);
+    int solve3(int arr[], int n);
+    int solve4(int arr[], int n);
+
     
     
     

@@ -1534,3 +1534,62 @@ void AllAlgorithms::primeSolve3(int *arr, int n){
     }
     return ;
 }
+
+
+int AllAlgorithms::solve1(int *arr, int n){
+    int opt_nums = 0;
+    for (int i = 2; i <= n; i ++) {
+        for (int j = 2; j <= i-1; j ++) {
+            if(0 == i%j)
+                arr[i] = 1;
+            opt_nums ++;
+        }
+    }
+    return opt_nums;
+}
+
+
+int prime_list[MAXN] = {0};
+
+int AllAlgorithms::solve2(int *arr, int n){
+    int opt_nums = 0;
+    for (int i = 2; i <= n; i++) {
+        for (int j = 2; j*j <= i; j ++) {
+            if(0 == i % j)
+                arr[i] = 1;
+            opt_nums ++;
+        }
+    }
+    return opt_nums;
+}
+
+int AllAlgorithms::solve3(int *arr, int n){
+    int opt_nums = 0;
+    for (int i = 2; i * 2 <= n; i ++) {
+        if(0 == arr[i]){
+            for (int j = 2; i*j <= n; j ++) {
+                arr[i*j] = 1;
+                opt_nums ++;
+            }
+        }
+            
+    }
+    return opt_nums;
+}
+
+int AllAlgorithms::solve4(int *arr, int n){
+    int opt_nums = 0;
+    for (int i = 2; i*2 <= n; i ++) {
+        if(0 == arr[i])
+            prime_list[++prime_list[0]] = i;
+        for (int j = 1; j <= prime_list[0] && i*prime_list[j] <= n; j ++) {
+            arr[i*prime_list[j]] = 1;
+            opt_nums ++;
+            if(i % prime_list[j] == 0)
+                break;
+        }
+    }
+    return opt_nums;
+}
+
+//图灵停机问题
