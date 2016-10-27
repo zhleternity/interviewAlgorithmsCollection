@@ -86,6 +86,9 @@ public:
     int getLis2(const int *p, int length);
     int getLis3(const int *a, int size);
     void pre_insert(int *a, int &size, int x);
+    void primeSolve(int arr[], int n);
+    void primeSolve2(int arr[], int n);
+    void primeSolve3(int arr[], int n);
     
     
     

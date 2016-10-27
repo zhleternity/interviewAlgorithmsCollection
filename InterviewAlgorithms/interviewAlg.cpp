@@ -1480,3 +1480,30 @@ int AllAlgorithms::getLis3(const int *a, int size){
     delete [] b;
     return s;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+//胡光算法Coding
+//素数范围求解
+void AllAlgorithms::primeSolve(int *arr, int n){
+    for (int i = 3; i <= n; i ++) {
+        for (int j = 2; j*j <= i; j ++) {
+            if (0 == (i % j)) {
+                arr[i] = 1;
+                break;
+            }
+        }
+    }
+    return ;
+}
+
