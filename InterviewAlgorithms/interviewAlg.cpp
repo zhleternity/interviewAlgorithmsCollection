@@ -1507,3 +1507,30 @@ void AllAlgorithms::primeSolve(int *arr, int n){
     return ;
 }
 
+void AllAlgorithms::primeSolve2(int *arr, int n){
+    int opt_nums = 0;
+    for (int i = 2; i * i <= n; i ++) {
+        if(arr[i])
+            continue;
+        for (int j = 2; i*j <= n; j ++) {
+            arr[i*j] = 1;
+            opt_nums ++;
+        }
+    }
+    return;
+}
+
+void AllAlgorithms::primeSolve3(int *arr, int n){
+    int prime_list[n];
+    int p_cnt = 0;
+    for (int i = 2; i * 2 <= n; i ++) {
+        if(!arr[i])
+            prime_list[p_cnt ++] = i;
+        for (int j = 0; j < p_cnt; j ++) {
+            arr[i*prime_list[j]] = 1;
+            if(0 == i % prime_list[j])
+                break;
+        }
+    }
+    return ;
+}
