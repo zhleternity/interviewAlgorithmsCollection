@@ -190,15 +190,15 @@ int main() {
     cout<<flag<<endl;
     
     
-    int arr1[4][MAXN] = {0};
-    cout<<aa.solve1(arr1[0], 100)<<endl;
-    cout<<aa.solve2(arr1[1], 100)<<endl;
-    cout<<aa.solve3(arr1[2], 100)<<endl;
-    cout<<aa.solve4(arr1[3], 100)<<endl;
+    int arr[4][MAXN] = {0};
+    cout<<aa.solve1(arr[0], 100)<<endl;
+    cout<<aa.solve2(arr[1], 100)<<endl;
+    cout<<aa.solve3(arr[2], 100)<<endl;
+    cout<<aa.solve4(arr[3], 100)<<endl;
     int ret = 0;
     for (int i = 2; i <= 100; i ++) {
         for (int j = 0; j < 4; j ++) {
-            ret += arr1[j][i];
+            ret += arr[j][i];
         }
         if(ret % 4 != 0)
             cout<<"error! num:"<<i<<endl;
