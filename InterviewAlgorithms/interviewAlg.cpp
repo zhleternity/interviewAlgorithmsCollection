@@ -1495,6 +1495,7 @@ int AllAlgorithms::getLis3(const int *a, int size){
 
 //胡光算法Coding
 //素数范围求解
+//比较时间复杂度
 void AllAlgorithms::primeSolve(int *arr, int n){
     for (int i = 3; i <= n; i ++) {
         for (int j = 2; j*j <= i; j ++) {
