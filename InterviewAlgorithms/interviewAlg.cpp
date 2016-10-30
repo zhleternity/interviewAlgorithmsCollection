@@ -1593,4 +1593,4 @@ int AllAlgorithms::solve4(int *arr, int n){
     return opt_nums;
 }
 
-//图灵停机问题
+//图灵停机问题:讲一个程序作为参数传入另一个函数，测试会不会停机
